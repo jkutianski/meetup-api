@@ -1,0 +1,10 @@
+{       
+    "events" : { 
+        "resource": "https://api.meetup.com/2/events"
+      , "method": "get"
+    }
+  , "event_comments" : {
+        "resource": "https://api.meetup.com/2/event_comments"
+      , "method": "get"
+    }  
+}

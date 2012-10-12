@@ -1,0 +1,12 @@
+{ 
+    "name" : "meetup-api"
+  , "description" : "Meetup API library"
+  , "version" : "0.1.0"
+  , "directories" : { "lib" : "./lib" }
+  , "keywords" : ["meetup","api"]
+  , "main" : "index.js"
+  , "author" : "Juan Pablo Kutianski <jkutianski@gmail.com>"
+  , "dependencies" : {
+        "superagent": "0.8.x"
+    }
+}
