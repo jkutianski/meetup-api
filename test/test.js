@@ -2,6 +2,8 @@
 
 var meetup = require('../lib/meetup')('');
 
-meetup.events({'group_urlname' : 'NodeJS-Argentina'}, function(err_events,events) {
+meetup.getEvents({'group_urlname' : 'NodeJS-Argentina'}, function(err,events) {
   console.log(events);
 });
+
+
