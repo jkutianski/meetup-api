@@ -56,6 +56,14 @@
         "resource": "https://api.meetup.com/2/event_rating"
       , "method": "post"
     }
+  , "getEventAttendance": {
+        "resource": "https://api.meetup.com/:urlname/events/:id/attendance"
+      , "method": "get"
+  }
+  , "takeEventAttendance": {
+        "resource": "https://api.meetup.com/:urlname/events/:id/attendance"
+      , "method": "post"
+  }
   , "getEverywhereComments" : {
         "resource": "https://api.meetup.com/ew/comments"
       , "method": "get"
