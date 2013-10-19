@@ -192,11 +192,11 @@
         "resource": "https://api.meetup.com/2/profiles"
       , "method": "post"
     }
-  , "postRVSP" : {
+  , "postRSVP" : {
         "resource": "https://api.meetup.com/2/rsvp"
       , "method": "post"
     }
-  , "getRVSPs" : {
+  , "getRSVPs" : {
         "resource": "https://api.meetup.com/2/rsvps"
       , "method": "get"
     }
