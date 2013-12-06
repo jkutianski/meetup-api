@@ -9,4 +9,8 @@
   , "dependencies" : {
         "superagent": "0.8.x"
     }
+  , "repository" : {
+        "type" : "git",
+        "url" : "http://github.com/jkutianski/meetup-api.git"
+    }
 }
