@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-
 var assert = require('assert');
 
-assert(process.env.MEETUP_KEY, 'meetup_key doesn\'t exist on enviroment');
+assert(process.env.MEETUP_KEY, 'MEETUP_KEY variable isn\'t set on enviroment (use \'set "MEETUP_KEY=key"\' on Windows)');
 
 var meetup = require('../lib/meetup')({key: process.env.MEETUP_KEY}),
 	endpoints = require('../lib/endpoints.json');
