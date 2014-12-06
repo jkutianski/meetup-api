@@ -13,7 +13,7 @@ function objectType(obj) {
 			return (Array.isArray(obj)) ? "array" : "object";
 			break;
 		default:
-			return "unknown"
+			return "unknown";
 	}
 
 }
@@ -40,12 +40,12 @@ Object.keys(endpoints).filter(function(endpointkey) {
 			default:
 		}
 
-		console.log('%s\t\tPASS', endpointkey)
+		console.log('%s\t\tPASS', endpointkey);
 	});
 });
 
 process.on('exit', function(code) {
 	if (!code) {
-		console.log("\nDone!")
+		console.log("\nDone!");
 	}
 });
