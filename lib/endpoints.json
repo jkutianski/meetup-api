@@ -346,6 +346,19 @@
       }
     }
   },
+  "getRSVP": {
+    "resource": "https://api.meetup.com/2/rsvp/:id",
+    "method": "get",
+    "test": {
+      "params": {
+        "id": "520376402"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["response", "rsvp_id"]
+      }
+    }
+  },
   "getOpenVenues": {
     "resource": "https://api.meetup.com/2/open_venues",
     "method": "get",
@@ -376,12 +389,33 @@
     "resource": "https://api.meetup.com/topics",
     "method": "get",
     "test": {
-      "params": {
-        "group_urlname": "NodeJS-Argentina"
-      },
+      "params": {},
       "return": {
         "type": "object",
         "keys": ["results", "meta"]
+      }
+    }
+  },
+  "getTopicCategories": {
+    "resource": "https://api.meetup.com/2/topic_categories",
+    "method": "get",
+    "test": {
+      "params": {},
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
+  },
+  "getRecommendedGroupTopics": {
+    "resource": "https://api.meetup.com/recommended/group_topics",
+    "method": "get",
+    "test": {
+      "params": {
+        "text": "javascript"
+        },
+      "return": {
+        "type": "array"
       }
     }
   },
@@ -396,6 +430,16 @@
       "return": {
         "type": "object",
         "keys": ["stats"]
+      }
+    }
+  },
+  "getNotifications": {
+    "resource": "https://api.meetup.com/notifications",
+    "method": "get",
+    "test": {
+      "params": {},
+      "return": {
+        "type": "array"
       }
     }
   }
