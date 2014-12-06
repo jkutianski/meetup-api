@@ -3,8 +3,10 @@ var packageJSON = require(process.cwd() + '/package.json')
 	version = packageJSON.version.split('.'),
 	build = version[2];
 
+build++;
+
 packageJSON.version = version.slice(0,2).join('.');
-packageJSON.version += ('.' + ++build);
+packageJSON.version += ('.' + build);
 
 fs.writeFile(process.cwd() + '/package.json', JSON.stringify(packageJSON, null, 4), function (err) {
   if (err) throw err;
