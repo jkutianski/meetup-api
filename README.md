@@ -18,11 +18,10 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [depstat-image]: https://david-dm.org/jkutianski/meetup-api.svg?style=flat
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg?style=flat
 [gitter-url]: https://gitter.im/jkutianski/meetup-api
-[codacy-image]: http://img.shields.io/codacy/dbf054dea51b43eb858c0d5d675e71c7.svg?style=flat
+[codacy-image]:https://www.codacy.com/project/badge/dbf054dea51b43eb858c0d5d675e71c7
 [codacy-url]: https://www.codacy.com/public/jkutianski/meetup-api
 [wiki-url]: https://github.com/jkutianski/meetup-api/wiki
 [meetup-url]: http://www.meetup.com/
 [meetup-api-docs-url]: http://www.meetup.com/meetup_api/docs/
 [javascrip-wikipedia]: http://en.wikipedia.org/wiki/JavaScript
 [nodejs-url]: http://nodejs.org/
-
