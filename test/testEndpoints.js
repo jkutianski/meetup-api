@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 
-var key = require('./key.json'),
-	endpoints = require('../lib/endpoints.json'),
-	assert = require('assert');
+var assert = require('assert');
 
 assert(process.env.meetup_key, 'meetup_key doesn\'t exist on enviroment');
 
-var meetup = require('../lib/meetup')({key: process.env.meetup_key});
+var meetup = require('../lib/meetup')({key: process.env.meetup_key}),
+	endpoints = require('../lib/endpoints.json');
 
 console.log("%s ver %s Test\n\n", meetup.description, meetup.version);
 
