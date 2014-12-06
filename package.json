@@ -1,16 +1,25 @@
-{ 
-    "name" : "meetup-api"
-  , "description" : "Meetup API library"
-  , "version" : "0.1.4"
-  , "directories" : { "lib" : "./lib" }
-  , "keywords" : ["meetup","api"]
-  , "main" : "index.js"
-  , "author" : "Juan Pablo Kutianski <jkutianski@gmail.com>"
-  , "dependencies" : {
-        "superagent": "0.8.x"
-    }
-  , "repository" : {
-        "type" : "git",
-        "url" : "http://github.com/jkutianski/meetup-api.git"
-    }
+{
+  "name": "meetup-api",
+  "description": "Meetup API library",
+  "version": "0.1.5",
+  "license": "GPL-3.0",
+  "directories": {
+    "lib": "./lib"
+  },
+  "keywords": ["meetup", "api"],
+  "main": "index.js",
+  "author": "Juan Pablo Kutianski <jkutianski@gmail.com>",
+  "bugs": {
+    "url": "http://github.com/jkutianski/meetup-api/issues"
+  },
+  "dependencies": {
+    "superagent": "0.8.x - 0.21.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jkutianski/meetup-api.git"
+  },
+  "scripts": {
+    "test": "node ./test/testEndpoints.js"
+  }
 }
