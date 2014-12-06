@@ -1,215 +1,304 @@
-{   
+{
+  "getCategories": {
+    "resource": "https://api.meetup.com/2/categories",
+    "method": "get",
+    "test": {
+      "params": {
+        "page": "20"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
+  },
+  "getCheckins": {
+    "resource": "https://api.meetup.com/2/checkins",
+    "method": "get"
+  },
+  "postCheckin": {
+    "resource": "https://api.meetup.com/2/checkin",
+    "method": "post"
+  },
+  "getCities": {
+    "resource": "https://api.meetup.com/cities",
+    "method": "get",
+    "test": {
+      "params": {
+        "page": "20"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
+  },
+  "getOpenEvents": {
+    "resource": "https://api.meetup.com/2/open_events",
+    "method": "get",
+    "test": {
+      "params": {
+        "topic": "javascript"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
+  },
+  "getConcierge": {
+    "resource": "https://api.meetup.com/2/concierge",
+    "method": "get",
+    "test": {
+      "params": {
+        "country": "argentina"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
+  },
+  "getEvents": {
+    "resource": "https://api.meetup.com/2/events",
+    "method": "get",
+    "test": {
+      "params": {
+        "group_urlname": "NodeJS-Argentina"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
+  },
+  "getEvent": {
+    "resource": "https://api.meetup.com/2/event/:id",
+    "method": "get",
+    "test": {
+      "params": {
+        "id": "79797122"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["status", "venue", "id", "group"]
+      }
+    }
+  },
+  "postEvent": {
+    "resource": "https://api.meetup.com/2/event",
+    "method": "post"
+  },
+  "getEventComments": {
+    "resource": "https://api.meetup.com/2/event_comments",
+    "method": "get",
+    "test": {
+      "params": {
+        "group_id": "4603552"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
+  },
+  "postEventComment": {
+    "resource": "https://api.meetup.com/2/event_comment",
+    "method": "post"
+  },
+  "postEventCommentFlag": {
+    "resource": "https://api.meetup.com/2/event_comment_flag",
+    "method": "post"
+  },
+  "getEventCommentLikes": {
+    "resource": "https://api.meetup.com/2/event_comment_likes",
+    "method": "get"
+  },
+  "getEventRatings": {
+    "resource": "https://api.meetup.com/2/event_ratings",
+    "method": "get"
+  },
+  "postEventRating": {
+    "resource": "https://api.meetup.com/2/event_rating",
+    "method": "post"
+  },
+  "getEventAttendance": {
+    "resource": "https://api.meetup.com/:urlname/events/:id/attendance",
+    "method": "get",
+    "test": {
+      "params": {
+        "id": "79797122",
+        "urlname": "NodeJS-Argentina"
+      },
+      "return": {
+        "type": "array"
+      }
+    }
+  },
+  "takeEventAttendance": {
+    "resource": "https://api.meetup.com/:urlname/events/:id/attendance",
+    "method": "post"
+  },
+  "getEverywhereComments": {
+    "resource": "https://api.meetup.com/ew/comments",
+    "method": "get"
+  },
+  "postEverywhereComment": {
+    "resource": "https://api.meetup.com/ew/comment",
+    "method": "post"
+  },
+  "getEverywhereCommunities": {
+    "resource": "https://api.meetup.com/ew/communities",
+    "method": "get"
+  },
+  "postEverywhereCommunity": {
+    "resource": "https://api.meetup.com/ew/community",
+    "method": "post"
+  },
+  "getEverywhereFollows": {
+    "resource": "https://api.meetup.com/ew/follows",
+    "method": "get"
+  },
+  "getEverywhereFollowers": {
+    "resource": "https://api.meetup.com/ew/followers",
+    "method": "get"
+  },
+  "postEverywhereFollow": {
+    "resource": "https://api.meetup.com/ew/follow",
+    "method": "post"
+  },
+  "postEverywhereContainer": {
+    "resource": "https://api.meetup.com/ew/container",
+    "method": "post"
+  },
+  "getEverywhereContainers": {
+    "resource": "https://api.meetup.com/ew/containers",
+    "method": "get"
+  },
+  "postEverywhereSeed": {
+    "resource": "https://api.meetup.com/ew/seed",
+    "method": "post"
+  },
+  "postEverywhereEvent": {
+    "resource": "https://api.meetup.com/ew/event",
+    "method": "post"
+  },
+  "getEverywhereEvents": {
+    "resource": "https://api.meetup.com/ew/events",
+    "method": "get"
+  },
+  "postEverywhereRsvp": {
+    "resource": "https://api.meetup.com/ew/rsvp",
+    "method": "post"
+  },
+  "getEverywhereRsvps": {
+    "resource": "https://api.meetup.com/ew/rsvps",
+    "method": "get"
+  },
+  "getEverywhereSeeds": {
+    "resource": "https://api.meetup.com/ew/seeds",
+    "method": "get"
+  },
+  "getActivity": {
+    "resource": "https://api.meetup.com/activity",
+    "method": "get"
+  },
+  "getGroups": {
+    "resource": "https://api.meetup.com/2/groups",
+    "method": "get"
+  },
+  "getComments": {
+    "resource": "https://api.meetup.com/comments",
+    "method": "get"
+  },
+  "getMembers": {
+    "resource": "https://api.meetup.com/2/members",
+    "method": "get"
+  },
+  "postMemberPhoto": {
+    "resource": "https://api.meetup.com/2/member_photo",
+    "method": "post"
+  },
+  "postMessage": {
+    "resource": "https://api.meetup.com/2/message",
+    "method": "post"
+  },
+  "getOEMBed": {
+    "resource": "https://api.meetup.com/oembed",
+    "method": "get"
+  },
+  "getOEMBed": {
+    "resource": "https://api.meetup.com/oembed",
+    "method": "get"
+  },
+  "getPhotoComments": {
+    "resource": "https://api.meetup.com/2/photo_comments",
+    "method": "get"
+  },
+  "postPhotoComment": {
+    "resource": "https://api.meetup.com/2/photo_comment",
+    "method": "post"
+  },
+  "getPhotoAlbums": {
+    "resource": "https://api.meetup.com/2/photo_albums",
+    "method": "get"
+  },
+  "getPhoto": {
+    "resource": "https://api.meetup.com/2/photo",
+    "method": "get"
+  },
+  "getPhotos": {
+    "resource": "https://api.meetup.com/2/photos",
+    "method": "get"
+  },
+  "postPhotoAlbum": {
+    "resource": "https://api.meetup.com/2/photo_album",
+    "method": "post"
+  },
+  "postPhoto": {
+    "resource": "https://api.meetup.com/2/photo",
+    "method": "post"
+  },
+  "getProfiles": {
+    "resource": "https://api.meetup.com/2/profiles",
+    "method": "get"
+  },
+  "postProfiles": {
+    "resource": "https://api.meetup.com/2/profiles",
+    "method": "post"
+  },
+  "postRSVP": {
+    "resource": "https://api.meetup.com/2/rsvp",
+    "method": "post"
+  },
+  "getRSVPs": {
+    "resource": "https://api.meetup.com/2/rsvps",
+    "method": "get"
+  },
+  "getOpenVenues": {
+    "resource": "https://api.meetup.com/2/open_venues",
+    "method": "get"
+  },
+  "getVenues": {
+    "resource": "https://api.meetup.com/2/venues",
+    "method": "get"
+  },
+  "getTopics": {
+    "resource": "https://api.meetup.com/topics",
+    "method": "get"
+  },
+  "dashboard": {
+    "resource": "https://api.meetup.com/dashboard",
+    "method": "get",
+    "test": {
+      "params": {
 
-    "getCategories" : {
-        "resource": "https://api.meetup.com/2/categories"
-      , "method": "get"
+        "fields": "stats"
+      },
+            "return": {
+        "type": "object",
+        "keys": ["stats"]
+      }
     }
-  , "getCheckins" : { 
-        "resource": "https://api.meetup.com/2/checkins"
-      , "method": "get"
-    }
-  , "postCheckin" : { 
-        "resource": "https://api.meetup.com/2/checkin"
-      , "method": "post"
-    }
-  , "getCities" : { 
-        "resource": "https://api.meetup.com/cities"
-      , "method": "get"
-    }
-  , "getOpenEvents" : { 
-        "resource": "https://api.meetup.com/2/open_events"
-      , "method": "get"
-    }
- , "getConcierge" : { 
-        "resource": "https://api.meetup.com/2/concierge"
-      , "method": "get"
-    }
-  , "getEvents" : { 
-        "resource": "https://api.meetup.com/2/events"
-      , "method": "get"
-    }
-  , "postEvent" : { 
-        "resource": "https://api.meetup.com/2/event"
-      , "method": "post"
-    }
-  , "getEventComments" : {
-        "resource": "https://api.meetup.com/2/event_comments"
-      , "method": "get"
-    }
-  , "postEventComment" : {
-        "resource": "https://api.meetup.com/2/event_comment"
-      , "method": "post"
-    }
-  , "postEventCommentFlag" : {
-        "resource": "https://api.meetup.com/2/event_comment_flag"
-      , "method": "post"
-    }
-  , "getEventCommentLikes" : {
-        "resource": "https://api.meetup.com/2/event_comment_likes"
-      , "method": "get"
-    }
-  , "getEventRatings" : {
-        "resource": "https://api.meetup.com/2/event_ratings"
-      , "method": "get"
-    }
-  , "postEventRating" : {
-        "resource": "https://api.meetup.com/2/event_rating"
-      , "method": "post"
-    }
-  , "getEventAttendance": {
-        "resource": "https://api.meetup.com/:urlname/events/:id/attendance"
-      , "method": "get"
   }
-  , "takeEventAttendance": {
-        "resource": "https://api.meetup.com/:urlname/events/:id/attendance"
-      , "method": "post"
-  }
-  , "getEverywhereComments" : {
-        "resource": "https://api.meetup.com/ew/comments"
-      , "method": "get"
-    }
-  , "postEverywhereComment" : {
-        "resource": "https://api.meetup.com/ew/comment"
-      , "method": "post"
-    }
-  , "getEverywhereCommunities" : {
-        "resource": "https://api.meetup.com/ew/communities"
-      , "method": "get"
-    }
-  , "postEverywhereCommunity" : {
-        "resource": "https://api.meetup.com/ew/community"
-      , "method": "post"
-    }
-  , "getEverywhereFollows" : {
-        "resource": "https://api.meetup.com/ew/follows"
-      , "method": "get"
-    }
-  , "getEverywhereFollowers" : {
-        "resource": "https://api.meetup.com/ew/followers"
-      , "method": "get"
-    }
-  , "postEverywhereFollow" : {
-        "resource": "https://api.meetup.com/ew/follow"
-      , "method": "post"
-    }
-  , "postEverywhereContainer" : {
-        "resource": "https://api.meetup.com/ew/container"
-      , "method": "post"
-    }
-  , "getEverywhereContainers" : {
-        "resource": "https://api.meetup.com/ew/containers"
-      , "method": "get"
-    }
-  , "postEverywhereSeed" : {
-        "resource": "https://api.meetup.com/ew/seed"
-      , "method": "post"
-    }
-  , "postEverywhereEvent" : {
-        "resource": "https://api.meetup.com/ew/event"
-      , "method": "post"
-    }
-  , "getEverywhereEvents" : {
-        "resource": "https://api.meetup.com/ew/events"
-      , "method": "get"
-    }
-  , "postEverywhereRsvp" : {
-        "resource": "https://api.meetup.com/ew/rsvp"
-      , "method": "post"
-    }
-  , "getEverywhereRsvps" : {
-        "resource": "https://api.meetup.com/ew/rsvps"
-      , "method": "get"
-    }
-  , "getEverywhereSeeds" : {
-        "resource": "https://api.meetup.com/ew/seeds"
-      , "method": "get"
-    }
-  , "getActivity" : {
-        "resource": "https://api.meetup.com/activity"
-      , "method": "get"
-    }
-  , "getGroups" : {
-        "resource": "https://api.meetup.com/2/groups"
-      , "method": "get"
-    }
-  , "getComments" : {
-        "resource": "https://api.meetup.com/comments"
-      , "method": "get"
-    }
-  , "getMembers" : {
-        "resource": "https://api.meetup.com/2/members"
-      , "method": "get"
-    }
-  , "postMemberPhoto" : {
-        "resource": "https://api.meetup.com/2/member_photo"
-      , "method": "post"
-    }
-  , "postMessage" : {
-        "resource": "https://api.meetup.com/2/message"
-      , "method": "post"
-    }
-  , "getOEMBed" : {
-        "resource": "https://api.meetup.com/oembed"
-      , "method": "get"
-    }
-  , "getOEMBed" : {
-        "resource": "https://api.meetup.com/oembed"
-      , "method": "get"
-    }
-  , "getPhotoComments" : {
-        "resource": "https://api.meetup.com/2/photo_comments"
-      , "method": "get"
-    }
-  , "postPhotoComment" : {
-        "resource": "https://api.meetup.com/2/photo_comment"
-      , "method": "post"
-    }
-  , "getPhotoAlbums" : {
-        "resource": "https://api.meetup.com/2/photo_albums"
-      , "method": "get"
-    }
-  , "getPhoto" : {
-        "resource": "https://api.meetup.com/2/photo"
-      , "method": "get"
-    }
-  , "getPhotos" : {
-        "resource": "https://api.meetup.com/2/photos"
-      , "method": "get"
-    }
-  , "postPhotoAlbum" : {
-        "resource": "https://api.meetup.com/2/photo_album"
-      , "method": "post"
-    }
-  , "postPhoto" : {
-        "resource": "https://api.meetup.com/2/photo"
-      , "method": "post"
-    }
-  , "getProfiles" : {
-        "resource": "https://api.meetup.com/2/profiles"
-      , "method": "get"
-    }
-  , "postProfiles" : {
-        "resource": "https://api.meetup.com/2/profiles"
-      , "method": "post"
-    }
-  , "postRSVP" : {
-        "resource": "https://api.meetup.com/2/rsvp"
-      , "method": "post"
-    }
-  , "getRSVPs" : {
-        "resource": "https://api.meetup.com/2/rsvps"
-      , "method": "get"
-    }
-  , "getOpenVenues" : {
-        "resource": "https://api.meetup.com/2/open_venues"
-      , "method": "get"
-    }
-  , "getVenues" : {
-        "resource": "https://api.meetup.com/2/venues"
-      , "method": "get"
-    }
-  , "getTopics" : {
-        "resource": "https://api.meetup.com/topics"
-      , "method": "get"
-    }
 }
