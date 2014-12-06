@@ -1,5 +1,6 @@
 Meetup API library for Node.js
 ==============================
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/jkutianski/meetup-api?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![NPM](https://nodei.co/npm/meetup-api.png)](https://nodei.co/npm/meetup-api/)
 
