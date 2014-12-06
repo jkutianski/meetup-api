@@ -16,8 +16,6 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [license-url]: https://github.com/jkutianski/meetup-api/blob/master/LICENSE
 [depstat-url]: https://david-dm.org/jkutianski/meetup-api
 [depstat-image]: https://david-dm.org/jkutianski/meetup-api.svg?style=flat
-[issues-image]: http://img.shields.io/github/issues/jkutianski/meetup-api.svg?style=flat
-[issues-url]: https://www.npmjs.org/package/meetup-api
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg?style=flat
 [gitter-url]: https://gitter.im/jkutianski/meetup-api
 [wiki-url]: https://github.com/jkutianski/meetup-api/wiki
