@@ -1,4 +1,43 @@
 {
+  "getBoards": {
+    "resource": "https://api.meetup.com/:urlname/boards",
+    "method": "get",
+    "test": {
+      "params": {
+        "urlname": "NodeJS-Argentina"
+      },
+      "return": {
+        "type": "array"
+      }
+    }
+  },
+  "getDiscussions": {
+    "resource": "https://api.meetup.com/:urlname/boards/:bid/discussions",
+    "method": "get",
+    "test": {
+      "params": {
+        "urlname": "NodeJS-Argentina",
+        "bid": "5068912"
+      },
+      "return": {
+        "type": "array"
+      }
+    }
+  },
+  "getDiscussion": {
+    "resource": "https://api.meetup.com/:urlname/boards/:bid/discussions/:did",
+    "method": "get",
+    "test": {
+      "params": {
+        "urlname": "NodeJS-Argentina",
+        "bid": "5068912",
+        "did": "26228352"
+      },
+      "return": {
+        "type": "array"
+      }
+    }
+  },
   "getCategories": {
     "resource": "https://api.meetup.com/2/categories",
     "method": "get",
@@ -11,10 +50,6 @@
         "keys": ["results", "meta"]
       }
     }
-  },
-  "getCheckins": {
-    "resource": "https://api.meetup.com/2/checkins",
-    "method": "get"
   },
   "postCheckin": {
     "resource": "https://api.meetup.com/2/checkin",
@@ -102,6 +137,19 @@
       }
     }
   },
+  "getEventComment": {
+    "resource": "https://api.meetup.com/2/event_comment/:id",
+    "method": "get",
+    "test": {
+      "params": {
+        "id": "119169482"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["comment", "event_id"]
+      }
+    }
+  },
   "postEventComment": {
     "resource": "https://api.meetup.com/2/event_comment",
     "method": "post"
@@ -112,11 +160,29 @@
   },
   "getEventCommentLikes": {
     "resource": "https://api.meetup.com/2/event_comment_likes",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "comment_id": "113951632"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "getEventRatings": {
     "resource": "https://api.meetup.com/2/event_ratings",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "event_id": "79797122"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "postEventRating": {
     "resource": "https://api.meetup.com/2/event_rating",
@@ -201,7 +267,16 @@
   },
   "getActivity": {
     "resource": "https://api.meetup.com/activity",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "page_start": "0"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "getGroups": {
     "resource": "https://api.meetup.com/2/groups",
