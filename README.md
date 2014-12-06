@@ -8,7 +8,7 @@ Meetup API library for Node.js
 [![GitHub][issues-image]][issues-url]
 [![Gitter chat][gitter-image]][gitter-url]
 
-meetup-api is an [Meetup.com](http://www.meetup.com/) API library written in [JavaScript](http://en.wikipedia.org/wiki/JavaScript) for [Node.js](http://nodejs.org/).
+meetup-api is an [Meetup.com][meetup-url] API library written in [JavaScript][javascrip-wikipedia] for [Node.js][nodejs-url].
 
 You can access more detailed documentation about the API at [Meetup API Docs site][meetup-api-docs-url] and [meetup-api Wiki pages][wiki-url]
 
@@ -21,4 +21,8 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg?style=flat
 [gitter-url]: https://gitter.im/jkutianski/meetup-api
 [wiki-url]: https://github.com/jkutianski/meetup-api/wiki
+[meetup-url]: http://www.meetup.com/
 [meetup-api-docs-url]: http://www.meetup.com/meetup_api/docs/
+[javascrip-wikipedia]: http://en.wikipedia.org/wiki/JavaScript
+[nodejs-url]: http://nodejs.org/
+
