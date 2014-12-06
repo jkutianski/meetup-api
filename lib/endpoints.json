@@ -220,15 +220,42 @@
   },
   "getGroups": {
     "resource": "https://api.meetup.com/2/groups",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "group_id": "4603552"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "getComments": {
     "resource": "https://api.meetup.com/comments",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "group_id": "4603552"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "getMembers": {
     "resource": "https://api.meetup.com/2/members",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "group_id": "4603552"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "postMemberPhoto": {
     "resource": "https://api.meetup.com/2/member_photo",
@@ -253,7 +280,16 @@
   },
   "getPhotoComments": {
     "resource": "https://api.meetup.com/2/photo_comments",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "photo_id": "12208722"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "postPhotoComment": {
     "resource": "https://api.meetup.com/2/photo_comment",
@@ -261,27 +297,33 @@
   },
   "getPhotoAlbums": {
     "resource": "https://api.meetup.com/2/photo_albums",
-    "method": "get"
-  },
-  "getPhoto": {
-    "resource": "https://api.meetup.com/2/photo",
-    "method": "get"
-  },
-  "getPhotos": {
-    "resource": "https://api.meetup.com/2/photos",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "group_id": "4603552"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "postPhotoAlbum": {
     "resource": "https://api.meetup.com/2/photo_album",
     "method": "post"
   },
-  "postPhoto": {
-    "resource": "https://api.meetup.com/2/photo",
-    "method": "post"
-  },
   "getProfiles": {
     "resource": "https://api.meetup.com/2/profiles",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "group_id": "4603552"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "postProfiles": {
     "resource": "https://api.meetup.com/2/profiles",
@@ -293,19 +335,55 @@
   },
   "getRSVPs": {
     "resource": "https://api.meetup.com/2/rsvps",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "event_id": "79797122"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "getOpenVenues": {
     "resource": "https://api.meetup.com/2/open_venues",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "group_urlname": "NodeJS-Argentina"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "getVenues": {
     "resource": "https://api.meetup.com/2/venues",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "group_urlname": "NodeJS-Argentina"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "getTopics": {
     "resource": "https://api.meetup.com/topics",
-    "method": "get"
+    "method": "get",
+    "test": {
+      "params": {
+        "group_urlname": "NodeJS-Argentina"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["results", "meta"]
+      }
+    }
   },
   "dashboard": {
     "resource": "https://api.meetup.com/dashboard",
@@ -315,7 +393,7 @@
 
         "fields": "stats"
       },
-            "return": {
+      "return": {
         "type": "object",
         "keys": ["stats"]
       }
