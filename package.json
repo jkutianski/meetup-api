@@ -23,7 +23,6 @@
         "url": "http://github.com/jkutianski/meetup-api.git"
     },
     "scripts": {
-        "test": "node ./test/testEndpoints.js",
-        "preinstall": "node ./scripts/change_version.js"
+        "test": "node ./test/testEndpoints.js"
     }
 }
