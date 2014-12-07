@@ -1,16 +1,69 @@
-var packageJSON = require(process.cwd() + '/package.json'),
-	fs = require('fs'),
-	version = packageJSON.version.split('.'),
-	build = version[2];
+var fs = require('fs'),
+	package = (function() {
+		var package = {},
+			json = require(process.cwd() + '/package.json');
 
-build++;
+		Object.defineProperty(package, 'json', {
+			get: function() {
+				return JSON.stringify(json, null, 4);
+			},
+			set: function(newValue) {
+				json = newValue;
+			},
+			enumerable: true,
+			configurable: true
+		});
 
-packageJSON.version = version.slice(0,2).join('.');
-packageJSON.version += ('.' + build);
+		Object.keys(json).forEach(function(key) {
+			Object.defineProperty(package, key, {
+				get: function() {
+					return json[key];
+				},
+				set: function(newValue) {
+					json[key] = newValue;
+				},
+				enumerable: true,
+				configurable: true
+			});
+		});
 
-fs.writeFile(process.cwd() + '/package.json', JSON.stringify(packageJSON, null, 4), function (err) {
+		/*
+		 *	Add version getter/setters
+		 */
+
+		['mayorVersion', 'minorVersion', 'buildVersion']
+		.forEach(function(key, index) {
+			Object.defineProperty(package, key, {
+				get: function() {
+					var verArr = json.version.split('.');
+					return verArr[index];
+				},
+				set: function(newValue) {
+					var verArr = json.version.split('.');
+					verArr[index] = newValue;
+					json.version = verArr.join('.');
+				},
+				enumerable: true,
+				configurable: true
+			});
+
+		});
+		return package;
+	})();
+
+/*
+ * Increment version build
+ */
+
+package.buildVersion++;
+
+/*
+ *	Write new package Obj to ./package.json
+ */
+
+fs.writeFile(process.cwd() + '/package.json', package.json, function (err) {
   if (err) {
   	throw err;
   }
-  console.log("%s new version %s",packageJSON.name.toUpperCase(), packageJSON.version);
+  console.log("%s new version %s",package.name.toUpperCase(), package.version);
 });
