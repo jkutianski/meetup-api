@@ -31,7 +31,7 @@ Object.keys(endpoints)
 			function() {
 				meetup[endpointkey](endpoints[endpointkey].test.params, function(err, ret) {
 
-					var errors = (function(errors) {
+					(function(errors) {
 						ret.problem = errors || ret.problem;
 						ret.code = errors && errors.code || ret.problem;
 						ret.details = errors && errors.message || ret.details;
