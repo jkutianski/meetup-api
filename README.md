@@ -17,8 +17,8 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [license-url]: https://github.com/jkutianski/meetup-api/blob/master/LICENSE
 [depstat-url]: https://david-dm.org/jkutianski/meetup-api
 [depstat-image]: https://david-dm.org/jkutianski/meetup-api.svg?style=flat
-[codeship-image]: http://img.shields.io/codeship/21a76d20-5f46-0132-5b7c-7eb424531d0a/master.svg?style=flat
-[codeship-url]: https://codeship.com/projects/51507
+[codeship-image]: http://img.shields.io/codeship/53271a40-6009-0132-2c13-2696ea524dd6/master.svg?style=flat
+[codeship-url]: https://codeship.com/projects/51586
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg?style=flat
 [gitter-url]: https://gitter.im/jkutianski/meetup-api
 [codacy-image]:https://www.codacy.com/project/badge/dbf054dea51b43eb858c0d5d675e71c7
