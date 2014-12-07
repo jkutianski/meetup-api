@@ -22,7 +22,7 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg?style=flat
 [gitter-url]: https://gitter.im/jkutianski/meetup-api
 [codacy-image]:https://www.codacy.com/project/badge/cbe5350e1cc64a35ac73495272dd148e
-[codacy-url]: https://www.codacy.com/public/jkutianski/meetup-api
+[codacy-url]: https://www.codacy.com/public/jkutianski/meetup-api_2
 [wiki-url]: https://github.com/jkutianski/meetup-api/wiki
 [meetup-url]: http://www.meetup.com/
 [meetup-api-docs-url]: http://www.meetup.com/meetup_api/docs/
