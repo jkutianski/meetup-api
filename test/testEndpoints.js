@@ -26,28 +26,41 @@ Object.keys(endpoints)
 	.filter(function(endpointkey) {
 		return endpoints[endpointkey].hasOwnProperty('test');
 	})
-	.forEach(function(endpointkey) {
-		meetup[endpointkey](endpoints[endpointkey].test.params, function(err, ret) {
+	.forEach(function(endpointkey, index) {
+		setTimeout(
+			function() {
+				meetup[endpointkey](endpoints[endpointkey].test.params, function(err, ret) {
 
-			assert(!ret.problem, ret.code + '\n' + ret.details + '\n');
-			assert(!ret.errors, JSON.stringify(ret.errors));
+					var errors = (function(errors) {
+						ret.problem = errors || ret.problem;
+						ret.code = errors && errors.code || ret.problem;
+						ret.details = errors && errors.message || ret.details;
 
-			assert.equal(objectType(ret), endpoints[endpointkey].test.return.type, endpointkey + ' not return an ' + endpoints[endpointkey].test.return.type);
+					})(
+						ret && ret.errors && ret.errors.pop()
+					);
 
-			switch (objectType(ret)) {
-				case 'object':
-					assert(endpoints[endpointkey].test.return.keys, endpointkey + ' hasn\'t defined keys on endpoints.json');
+					assert(!ret.problem, ret.code + ' (' + ret.details + ')\n');
 
-					endpoints[endpointkey].test.return.keys.forEach(function(returnkey) {
-						assert(ret.hasOwnProperty(returnkey), endpointkey + ' not return the ' + returnkey + ' key');
-					});
+					assert.equal(objectType(ret), endpoints[endpointkey].test.return.type, endpointkey + ' not return an ' + endpoints[endpointkey].test.return.type);
 
-					break;
-				default:
-			}
+					switch (objectType(ret)) {
+						case 'object':
+							assert(endpoints[endpointkey].test.return.keys, endpointkey + ' hasn\'t defined keys on endpoints.json');
 
-			console.log('%s\t\tPASS', endpointkey);
-		});
+							endpoints[endpointkey].test.return.keys.forEach(function(returnkey) {
+								assert(ret.hasOwnProperty(returnkey), endpointkey + ' not return the ' + returnkey + ' key');
+							});
+
+							break;
+						default:
+					}
+
+					console.log('%s\t\tPASS', endpointkey);
+				});
+			},
+			1000 * index + 1
+		);
 	});
 
 process.on('exit', function(code) {
