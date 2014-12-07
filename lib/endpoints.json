@@ -231,6 +231,31 @@
       }
     }
   },
+  "getGroup": {
+    "resource": "https://api.meetup.com/:urlname",
+    "method": "get",
+    "test": {
+      "params": {
+        "urlname": "NodeJS-Argentina"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["urlname", "id"]
+      }
+    }
+  },
+  "getSimilarGroups": {
+    "resource": "https://api.meetup.com/:urlname/similar_groups",
+    "method": "get",
+    "test": {
+      "params": {
+        "urlname": "NodeJS-Argentina"
+      },
+      "return": {
+        "type": "array"
+      }
+    }
+  },
   "getComments": {
     "resource": "https://api.meetup.com/comments",
     "method": "get",
@@ -254,6 +279,19 @@
       "return": {
         "type": "object",
         "keys": ["results", "meta"]
+      }
+    }
+  },
+  "getMember": {
+    "resource": "https://api.meetup.com/2/member/:id",
+    "method": "get",
+    "test": {
+      "params": {
+        "id": "46861012"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["id", "name"]
       }
     }
   },
@@ -325,6 +363,20 @@
       }
     }
   },
+  "getProfile": {
+    "resource": "https://api.meetup.com/2/profile/:gid/:mid",
+    "method": "get",
+    "test": {
+      "params": {
+        "gid": "4603552",
+        "mid": "46861012"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["profile_url", "member_id"]
+      }
+    }
+  },
   "postProfiles": {
     "resource": "https://api.meetup.com/2/profiles",
     "method": "post"
@@ -382,6 +434,18 @@
       "return": {
         "type": "object",
         "keys": ["results", "meta"]
+      }
+    }
+  },
+  "getRecommendedVenues": {
+    "resource": "https://api.meetup.com/recommended/venues",
+    "method": "get",
+    "test": {
+      "params": {
+        "group_urlname": "NodeJS-Argentina"
+      },
+      "return": {
+        "type": "array"
       }
     }
   },
