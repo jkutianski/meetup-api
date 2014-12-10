@@ -477,7 +477,7 @@
     "test": {
       "params": {
         "text": "javascript"
-        },
+      },
       "return": {
         "type": "array"
       }
@@ -504,6 +504,45 @@
       "params": {},
       "return": {
         "type": "array"
+      }
+    }
+  },
+  "getStreamRSVPs": {
+    "resource": "ws://stream.meetup.com/2/rsvps",
+    "method": "get",
+    "test": {
+      "params": {
+        "since_mtime": "1294435118533"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["response", "member"]
+      }
+    }
+  },
+  "getStreamPhotos": {
+    "resource": "ws://stream.meetup.com/2/photos",
+    "method": "get",
+    "test": {
+      "params": {
+        "since_mtime": "1294435118533"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["photo_id", "photo_link"]
+      }
+    }
+  },
+  "getStreamEventComments": {
+    "resource": "ws://stream.meetup.com/2/event_comments",
+    "method": "get",
+    "test": {
+      "params": {
+        "since_mtime": "1294435118533"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["id", "member"]
       }
     }
   }
