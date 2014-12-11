@@ -4,12 +4,11 @@ var assert = require('assert');
 
 assert(process.env.MEETUP_KEY, 'MEETUP_KEY variable isn\'t set on enviroment (use \'set "MEETUP_KEY=key"\' on Windows)');
 
-var endpoints = require('../lib/endpoints.json'),
-	commands = Object.keys(endpoints);
-
 var meetup = require('../lib/meetup')({
 	key: process.env.MEETUP_KEY
-}, commands);
+});
+
+var endpoints = require('../lib/endpoints.json');
 
 console.log("%s ver %s Test\n\n", meetup.description, meetup.version);
 
@@ -79,15 +78,15 @@ checkEndpoint.ws = function (endpointkey) {
 		});
 };
 
-commands
-	.filter(function(endpointkey) {
-		return endpoints[endpointkey].hasOwnProperty('test') &&
-			!endpoints[endpointkey].test.hasOwnProperty('disabled') &&
-			!endpoints[endpointkey].resource.match(/^ws\:/);
+meetup.commands
+	.filter(function(command) {
+		return endpoints[command].hasOwnProperty('test') &&
+			!endpoints[command].test.hasOwnProperty('disabled') &&
+			!endpoints[command].resource.match(/^ws\:/);
 	})
-	.forEach(function(endpointkey, index) {
+	.forEach(function(command, index) {
 		setTimeout(function() {
-			checkEndpoint.http(endpointkey);
+			checkEndpoint.http(command);
 		}, 1000 * index + 1);
 	});
 
