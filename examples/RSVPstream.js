@@ -1,4 +1,4 @@
-var meetup = require('../lib/meetup')(['getStreamRSVPs']),
+var meetup = require('../lib/meetup')(),
 	count = 1;
 
 var ovs = meetup.getStreamRSVPs()

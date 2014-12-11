@@ -1,4 +1,4 @@
-var meetup = require('../lib/meetup')(['getStreamEventComments']),
+var meetup = require('../lib/meetup')(),
 	count = 1;
 
 var ws = meetup.getStreamEventComments()
@@ -6,7 +6,7 @@ var ws = meetup.getStreamEventComments()
 		if (count > 10) {
 			ws.abort();
 		}
-		console.log("%s - %s coments: %s",
+		console.log("%s - %s comment: %s",
 			count,
 			obj.member.member_name,
 			obj.comment
