@@ -13,5 +13,5 @@ var ws = meetup.getStreamPhotos()
 		);
 		count++;
 	}).on('close', function() {
-		console.log("done!")
+		console.log("done!");
 	});
