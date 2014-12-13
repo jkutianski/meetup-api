@@ -4,16 +4,20 @@ var assert = require('assert');
 
 assert(process.env.MEETUP_KEY, 'MEETUP_KEY variable isn\'t set on enviroment (use \'set "MEETUP_KEY=key"\' on Windows)');
 
-var meetup = require('../lib/meetup')({
-	key: process.env.MEETUP_KEY
-});
+var meetup = require('../lib/meetup')();
 
 var endpoints = require('../lib/endpoints.json');
 
 console.log("%s ver %s Test\n\n", meetup.description, meetup.version);
 
+assert(!meetup.authkey, 'Authkey getter failed');
+console.log('Authkey getter\t\tPASS');
+meetup.authkey = process.env.MEETUP_KEY;
+assert(meetup.authkey, 'Authkey setter failed');
+console.log('Authkey setter\t\tPASS');
+
 meetup.dependencies.superagent = 0;
-assert(meetup.dependencies.superagent != 0, 'Read Only properties can be writed');
+assert(meetup.dependencies.superagent !== 0, 'Read Only properties can be writed');
 console.log('Read Only properties\t\tPASS');
 
 console.log('\nModule functions check:\n')
