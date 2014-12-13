@@ -16,9 +16,13 @@
     "url": "http://github.com/jkutianski/meetup-api/issues"
   },
   "dependencies": {
-    "websocket-stream": "1.1.x",
-    "superagent": "0.8.x - 0.21.x",
-    "node.extend": "1.1.x"
+    "node.extend": "^1.1.3",
+    "superagent": "^0.21.0",
+    "websocket-stream": "^1.1.1"
+  },
+  "optionalDependencies": {
+    "oauth": "^0.9.12",
+    "superagent-oauth": "^0.2.3"
   },
   "repository": {
     "type": "git",
