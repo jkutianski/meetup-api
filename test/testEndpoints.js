@@ -12,6 +12,12 @@ var endpoints = require('../lib/endpoints.json');
 
 console.log("%s ver %s Test\n\n", meetup.description, meetup.version);
 
+meetup.dependencies.superagent = 0;
+assert(meetup.dependencies.superagent != 0, 'Read Only properties can be writed');
+console.log('Read Only properties\t\tPASS');
+
+console.log('\nModule functions check:\n')
+
 function objectType(obj) {
 	switch (typeof obj) {
 		case 'object':
