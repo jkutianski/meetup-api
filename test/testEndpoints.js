@@ -20,17 +20,16 @@ meetup.dependencies.superagent = 0;
 assert(meetup.dependencies.superagent !== 0, 'Read Only properties can be writed');
 console.log('Read Only properties\t\tPASS');
 
-console.log('\nModule functions check:\n')
+console.log('\nModule functions check:\n');
 
 function objectType(obj) {
 	switch (typeof obj) {
 		case 'object':
 			return (Array.isArray(obj)) ? "array" : "object";
-			break;
 		default:
 			return typeof obj;
 	}
-};
+}
 
 var checkEndpoint = {};
 
