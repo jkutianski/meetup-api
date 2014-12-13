@@ -14,5 +14,5 @@ var ws = meetup.getStreamEventComments()
 		count++;
 	})
 	.on('close', function() {
-		console.log("done!")
+		console.log("done!");
 	});
