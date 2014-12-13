@@ -7,7 +7,7 @@ var meetup = require('../lib/meetup')({
 });
 
 meetup.getEvents({
-	'member_id': 'self'
+	member_id: "self"
 }, function(error, events) {
 	if (error) {
 		console.log(error);
