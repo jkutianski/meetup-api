@@ -13,6 +13,8 @@ meetup-api is an [Meetup.com][meetup-url] API library written in [JavaScript][ja
 
 You can access more detailed documentation about the API at [Meetup API Docs site][meetup-api-docs-url] and [meetup-api Wiki pages][wiki-url]
 
+(Todo list)[rodo-list]
+
 [license-image]: http://img.shields.io/npm/l/meetup-api.svg?style=flat
 [license-url]: https://github.com/jkutianski/meetup-api/blob/master/LICENSE
 [depstat-url]: https://david-dm.org/jkutianski/meetup-api
@@ -23,6 +25,7 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [gitter-url]: https://gitter.im/jkutianski/meetup-api
 [codacy-image]:https://www.codacy.com/project/badge/cbe5350e1cc64a35ac73495272dd148e
 [codacy-url]: https://www.codacy.com/public/jkutianski/meetup-api_2
+[todo-list]: https://github.com/jkutianski/meetup-api/wiki/Todo
 [wiki-url]: https://github.com/jkutianski/meetup-api/wiki
 [meetup-url]: http://www.meetup.com/
 [meetup-api-docs-url]: http://www.meetup.com/meetup_api/docs/
