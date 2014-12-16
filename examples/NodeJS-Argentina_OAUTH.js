@@ -1,6 +1,8 @@
 var assert = require('assert'),
 	http = require('http'),
-	url = require('url');
+	url = require('url'),
+	oauth_token,
+	RequestTokenUrl;
 
 assert(process.env.MEETUP_OAUTH, 'MEETUP_OAUTH variable isn\'t set on enviroment (use \'set "MEETUP_OAUTH={"key": "your_token", "secret": "your_secret"}"\' on Windows)');
 
@@ -8,12 +10,16 @@ var meetup = require('../lib/meetup')({
 	oauth: JSON.parse(process.env.MEETUP_OAUTH)
 });
 
+meetup.getOAuthRequestToken(function(error, Url) {
+	RequestTokenUrl = Url;
+});
 
 // Create an HTTP server
 var server = http.createServer(function(request, response) {
 	var uri = url.parse(request.url, true);
-	if (uri.query.oauth_token) {
-		meetup.getOAuthAccessToken(uri.query.oauth_token, function() {
+	oauth_token = oauth_token || uri.query.oauth_token;
+	if (oauth_token) {
+		meetup.getOAuthAccessToken(oauth_token, function() {
 			meetup.getGroup({
 				"urlname": "NodeJS-Argentina"
 			}, function(err, obj) {
@@ -32,12 +38,10 @@ var server = http.createServer(function(request, response) {
 
 		});
 	} else {
-		meetup.getOAuthRequestToken(function(error, Url) {
-			response.writeHead(302, {
-				'Location': Url
-			});
-			response.end();
+		response.writeHead(302, {
+			'Location': RequestTokenUrl
 		});
+		response.end();
 	}
 });
 
