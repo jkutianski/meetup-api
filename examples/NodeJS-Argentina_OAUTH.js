@@ -10,6 +10,10 @@ var meetup = require('../lib/meetup')({
 	oauth: JSON.parse(process.env.MEETUP_OAUTH)
 });
 
+// you can pass the key using
+// meetup.authkey = {key: 'keyvalue', secret: 'secretvalue'};
+// if the authkey is set `meetup.authkey === true`
+
 meetup.getOAuthRequestToken(function(error, Url) {
 	RequestTokenUrl = Url;
 });
