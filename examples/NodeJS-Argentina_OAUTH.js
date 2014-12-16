@@ -1,7 +1,6 @@
 var assert = require('assert'),
 	http = require('http'),
-	url = require('url'),
-	RequestTokenUrl = '';
+	url = require('url');
 
 assert(process.env.MEETUP_OAUTH, 'MEETUP_OAUTH variable isn\'t set on enviroment (use \'set "MEETUP_OAUTH={"key": "your_token", "secret": "your_secret"}"\' on Windows)');
 
@@ -9,9 +8,6 @@ var meetup = require('../lib/meetup')({
 	oauth: JSON.parse(process.env.MEETUP_OAUTH)
 });
 
-meetup.getOAuthRequestToken(function(error, Url) {
-	RequestTokenUrl = Url;
-});
 
 // Create an HTTP server
 var server = http.createServer(function(request, response) {
@@ -36,10 +32,12 @@ var server = http.createServer(function(request, response) {
 
 		});
 	} else {
-		response.writeHead(302, {
-		  'Location': RequestTokenUrl
+		meetup.getOAuthRequestToken(function(error, Url) {
+			response.writeHead(302, {
+				'Location': Url
+			});
+			response.end();
 		});
-		response.end();
 	}
 });
 
