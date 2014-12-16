@@ -1,6 +1,6 @@
 var assert = require('assert'),
-	http = require('http')
-url = require('url');
+	http = require('http'),
+	url = require('url');
 
 assert(process.env.MEETUP_OAUTH, 'MEETUP_OAUTH variable isn\'t set on enviroment (use \'set "MEETUP_OAUTH={"key": "your_token", "secret": "your_secret"}"\' on Windows)');
 
@@ -10,7 +10,7 @@ var meetup = require('../lib/meetup')({
 
 meetup.getOAuthRequestToken(function(error, url) {
 	console.log(url);
-})
+});
 
 // Create an HTTP server
 var server = http.createServer(function(request, response) {
