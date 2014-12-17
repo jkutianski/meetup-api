@@ -14,10 +14,6 @@ var meetup = require('../lib/meetup')({
 // meetup.authkey = {key: 'keyvalue', secret: 'secretvalue'};
 // if the authkey is set `meetup.authkey === true`
 
-meetup.getOAuthRequestToken(function(error, Url) {
-	RequestTokenUrl = Url;
-});
-
 // Create an HTTP server
 var server = http.createServer(function(request, response) {
 	var uri = url.parse(request.url, true);
