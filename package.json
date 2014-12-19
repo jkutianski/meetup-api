@@ -4,7 +4,8 @@
   "version": "0.1.15",
   "license": "GPL-3.0",
   "directories": {
-    "lib": "./lib"
+    "lib": "./lib",
+    "example": "./examples"
   },
   "keywords": [
     "meetup",
@@ -23,6 +24,9 @@
   "optionalDependencies": {
     "oauth": "^0.9.12",
     "superagent-oauth": "^0.2.3"
+  },
+  "devDependencies": {
+    "foreachasync": "^3.0.0"
   },
   "repository": {
     "type": "git",
