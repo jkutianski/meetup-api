@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+console.log("NOTE: Don't abuse with the test, or your credentials will be throttled!!!");
+
 var assert = require('assert'),
 	forEachAsync = require('foreachasync').forEachAsync;
 
