@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-var assert = require('assert');
+var assert = require('assert'),
+	forEachAsync = require('foreachasync').forEachAsync;
 
 assert(process.env.MEETUP_KEY, 'MEETUP_KEY variable isn\'t set on enviroment (use \'set "MEETUP_KEY=key"\' on Windows)');
 
@@ -33,7 +34,7 @@ function objectType(obj) {
 
 var checkEndpoint = {};
 
-checkEndpoint.http = function (endpointkey) {
+checkEndpoint.http = function(endpointkey, cb) {
 	meetup[endpointkey](endpoints[endpointkey].test.params, function(err, ret) {
 		(function(errors) {
 			ret.problem = errors || ret.problem;
@@ -63,10 +64,11 @@ checkEndpoint.http = function (endpointkey) {
 		}
 
 		console.log('%s\t\tPASS', endpointkey);
+		cb();
 	});
 };
 
-checkEndpoint.ws = function (endpointkey) {
+checkEndpoint.ws = function(endpointkey, cb) {
 	var ws = meetup[endpointkey](endpoints[endpointkey].params)
 		.on('data', function(ret) {
 			ws.abort();
@@ -82,21 +84,23 @@ checkEndpoint.ws = function (endpointkey) {
 				default:
 			}
 		})
-		.on('close', function () {
+		.on('close', function() {
 			console.log('%s\t\tPASS', endpointkey);
+			cb();
 		});
 };
 
-meetup.commands
+forEachAsync(meetup.commands
 	.filter(function(command) {
 		return endpoints[command].hasOwnProperty('test') &&
-			!endpoints[command].test.hasOwnProperty('disabled') &&
-			!endpoints[command].resource.match(/^ws\:/);
-	})
-	.forEach(function(command, index) {
-		setTimeout(function() {
-			checkEndpoint.http(command);
-		}, 1000 * index + 1);
+			!endpoints[command].test.hasOwnProperty('disabled');
+	}),
+	function(next, command) {
+		if (endpoints[command].resource.match(/^ws\:/)) {
+			checkEndpoint.ws(command, next);
+		} else {
+			checkEndpoint.http(command, next);
+		}
 	});
 
 process.on('exit', function(code) {
