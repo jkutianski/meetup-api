@@ -101,7 +101,9 @@ forEachAsync(meetup.commands
 		if (endpoints[command].resource.match(/^ws\:/)) {
 			checkEndpoint.ws(command, next);
 		} else {
-			checkEndpoint.http(command, next);
+			setTimeout(function() {
+				checkEndpoint.http(command, next);
+			}, 1000);			
 		}
 	});
 
