@@ -124,6 +124,10 @@
     "resource": "https://api.meetup.com/2/event",
     "method": "post"
   },
+  "editEvent": {
+    "resource": "https://api.meetup.com/2/event/:id",
+    "method": "post"
+  },
   "deleteEvent": {
     "resource": "https://api.meetup.com/2/event/:id",
     "method": "delete"
@@ -276,6 +280,18 @@
       }
     }
   },
+  "editGroup": {
+    "resource": "https://api.meetup.com/:urlname",
+    "method": "post"
+  },
+  "postTopics": {
+    "resource": "/:urlname/topics",
+    "method": "post"
+  },
+  "deleteTopics": {
+    "resource": "/:urlname/topics",
+    "method": "delete"
+  },
   "getSimilarGroups": {
     "resource": "https://api.meetup.com/:urlname/similar_groups",
     "method": "get",
@@ -327,9 +343,17 @@
       }
     }
   },
+  "editMember": {
+    "resource": "https://api.meetup.com/2/member/:id",
+    "method": "post"
+  },
   "postMemberPhoto": {
     "resource": "https://api.meetup.com/2/member_photo",
     "method": "post"
+  },
+  "deleteMemberPhoto": {
+    "resource": "https://api.meetup.com/2/member_photo",
+    "method": "delete"
   },
   "postMessage": {
     "resource": "https://api.meetup.com/2/message",
@@ -347,6 +371,14 @@
         "keys": ["type", "html"]
       }
     }
+  },
+  "postPhoto": {
+    "resource": "https://api.meetup.com/2/photo",
+    "method": "post"
+  },
+  "deletePhoto": {
+    "resource": "https://api.meetup.com/2/photo/:id",
+    "method": "delete"
   },
   "getPhotoComments": {
     "resource": "https://api.meetup.com/2/photo_comments",
@@ -412,6 +444,26 @@
   "postProfiles": {
     "resource": "https://api.meetup.com/2/profiles",
     "method": "post"
+  },
+  "postProfile": {
+    "resource": "https://api.meetup.com/2/profile",
+    "method": "post"
+  },
+  "editProfile": {
+    "resource": "https://api.meetup.com/2/profile/:gid/:mid",
+    "method": "post"
+  },
+  "deleteProfile": {
+    "resource": "https://api.meetup.com/2/profile/:gid/:mid",
+    "method": "delete"
+  },
+  "membershipApproval": {
+    "resource": "https://api.meetup.com/:urlname/member/approvals",
+    "method": "post"
+  },
+  "membershipDecline": {
+    "resource": "https://api.meetup.com/:urlname/member/approvals",
+    "method": "delete"
   },
   "postRSVP": {
     "resource": "https://api.meetup.com/2/rsvp",
@@ -538,6 +590,10 @@
         "type": "array"
       }
     }
+  },
+  "setNotificationsRead": {
+    "resource": "https://api.meetup.com/notifications/read",
+    "method": "post"
   },
   "getStreamRSVPs": {
     "resource": "ws://stream.meetup.com/2/rsvps",
