@@ -5,6 +5,8 @@ Meetup API library for Node.js
 
 [![License][license-image]][license-url]
 [![Dependency Status][depstat-image]][depstat-url]
+[![devDependency Status][devdepstat-imag][devdepstat-url]
+[![optionalDependency Status][optdepstat-imag][optdepstat-url]
 [![Codeship Status][codeship-image]][codeship-url]
 [![Codacy][codacy-image]][codacy-url]
 [![Gitter chat][gitter-image]][gitter-url]
@@ -19,6 +21,10 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [license-url]: https://github.com/jkutianski/meetup-api/blob/master/LICENSE
 [depstat-url]: https://david-dm.org/jkutianski/meetup-api
 [depstat-image]: https://david-dm.org/jkutianski/meetup-api.svg?style=flat
+[devdepstat-url]: https://david-dm.org/jkutianski/meetup-api#info=devDependencies
+[devdepstat-imag]: https://david-dm.org/jkutianski/meetup-api/dev-status.svg
+[optdepstat-url]: https://david-dm.org/jkutianski/meetup-api#info=optionalDependencies
+[optdepstat-imag]: https://david-dm.org/jkutianski/meetup-api/optional-status.svg
 [codeship-image]: http://img.shields.io/codeship/53271a40-6009-0132-2c13-2696ea524dd6/master.svg?style=flat
 [codeship-url]: https://codeship.com/projects/51586
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg?style=flat
