@@ -5,8 +5,8 @@ Meetup API library for Node.js
 
 [![License][license-image]][license-url]
 [![Dependency Status][depstat-image]][depstat-url]
-[![devDependency Status][devdepstat-imag][devdepstat-url]
-[![optionalDependency Status][optdepstat-imag][optdepstat-url]
+[![devDependency Status][devdepstat-imag]][devdepstat-url]
+[![optionalDependency Status][optdepstat-imag]][optdepstat-url]
 [![Codeship Status][codeship-image]][codeship-url]
 [![Codacy][codacy-image]][codacy-url]
 [![Gitter chat][gitter-image]][gitter-url]
