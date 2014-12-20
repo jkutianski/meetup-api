@@ -124,6 +124,10 @@
     "resource": "https://api.meetup.com/2/event",
     "method": "post"
   },
+  "deleteEvent": {
+    "resource": "https://api.meetup.com/2/event/:id",
+    "method": "delete"
+  },
   "getEventComments": {
     "resource": "https://api.meetup.com/2/event_comments",
     "method": "get",
@@ -154,6 +158,18 @@
     "resource": "https://api.meetup.com/2/event_comment",
     "method": "post"
   },
+  "deleteEventComment": {
+    "resource": "https://api.meetup.com/2/event_comment/:id",
+    "method": "delete"
+  },
+  "postEventCommentSubscribe": {
+    "resource": "https://api.meetup.com/2/event_comment_subscribe/:id",
+    "method": "post"
+  },
+  "deleteEventCommentSubscribe": {
+    "resource": "https://api.meetup.com/2/event_comment_subscribe/:id",
+    "method": "delete"
+  },
   "postEventCommentFlag": {
     "resource": "https://api.meetup.com/2/event_comment_flag",
     "method": "post"
@@ -170,6 +186,22 @@
         "keys": ["results", "meta"]
       }
     }
+  },
+  "postEventCommentLike": {
+    "resource": "https://api.meetup.com/2/event_comment_like/:id",
+    "method": "post"
+  },
+  "deleteEventCommentLike": {
+    "resource": "https://api.meetup.com/2/event_comment_like/:id",
+    "method": "delete"
+  },
+  "postEventsWatchlist": {
+    "resource": "https://api.meetup.com/:urlname/events/:id/watchlist",
+    "method": "post"
+  },
+  "deleteEventsWatchlist": {
+    "resource": "https://api.meetup.com/:urlname/events/:id/watchlist",
+    "method": "delete"
   },
   "getEventRatings": {
     "resource": "https://api.meetup.com/2/event_ratings",
