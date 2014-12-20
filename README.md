@@ -4,12 +4,13 @@ Meetup API library for Node.js
 [![NPM](https://nodei.co/npm/meetup-api.png)](https://nodei.co/npm/meetup-api/)
 
 [![License][license-image]][license-url]
-[![Dependency Status][depstat-image]][depstat-url]
-[![devDependency Status][devdepstat-imag]][devdepstat-url]
-[![optionalDependency Status][optdepstat-imag]][optdepstat-url]
 [![Codeship Status][codeship-image]][codeship-url]
 [![Codacy][codacy-image]][codacy-url]
 [![Gitter chat][gitter-image]][gitter-url]
+
+[![Dependency Status][depstat-image]][depstat-url]
+[![devDependency Status][devdepstat-imag]][devdepstat-url]
+[![optionalDependency Status][optdepstat-imag]][optdepstat-url]
 
 meetup-api is an [Meetup.com][meetup-url] API library written in [JavaScript][javascrip-wikipedia] for [Node.js][nodejs-url].
 
