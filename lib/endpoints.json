@@ -1,4 +1,15 @@
 {
+  "getStatus": {
+    "resource": "https://api.meetup.com/status",
+    "method": "get",
+    "test": {
+      "params": {},
+      "return": {
+        "type": "object",
+        "keys": ["status"]
+      }
+    }
+  },
   "getBoards": {
     "resource": "https://api.meetup.com/:urlname/boards",
     "method": "get",
