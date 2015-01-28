@@ -3,7 +3,7 @@
 console.log("NOTE: Don't abuse with the test, or your credentials will be throttled!!!");
 
 var assert = require('assert'),
-	forEachAsync = require('foreachasync').forEachAsync;
+	forAllAsync = require('forallasync').forAllAsync;
 
 assert(process.env.MEETUP_KEY, 'MEETUP_KEY variable isn\'t set on enviroment (use \'set "MEETUP_KEY=key"\' on Windows)');
 
@@ -92,7 +92,7 @@ checkEndpoint.ws = function(endpointkey, cb) {
 		});
 };
 
-forEachAsync(meetup.commands
+forAllAsync(meetup.commands
 	.filter(function(command) {
 		return endpoints[command].hasOwnProperty('test') &&
 			!endpoints[command].test.hasOwnProperty('disabled');
@@ -103,9 +103,11 @@ forEachAsync(meetup.commands
 		} else {
 			setTimeout(function() {
 				checkEndpoint.http(command, next);
-			}, 1000);			
+			}, 1000);
 		}
-	});
+	},
+	1
+);
 
 process.on('exit', function(code) {
 	if (!code) {
