@@ -1,7 +1,7 @@
 Meetup API library for Node.js
 ==============================
 
-[![NPM](https://nodei.co/npm/meetup-api.png)](https://nodei.co/npm/meetup-api.png)
+[![NPM](https://nodei.co/npm/meetup-api.png)](https://nodei.co/npm/meetup-api)
 
 [![License][license-image]][license-url]
 [![Codeship Status][codeship-image]][codeship-url]
