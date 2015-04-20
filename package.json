@@ -1,7 +1,7 @@
 {
   "name": "meetup-api",
   "description": "Meetup API library",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "license": "GPL-3.0",
   "directories": {
     "lib": "./lib",
@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "node.extend": "1.1.x",
-    "superagent": "1.1.x",
-    "websocket-stream": "1.4.x"
+    "superagent": "1.2.x",
+    "websocket-stream": "1.5.x"
   },
   "optionalDependencies": {
     "oauth": "0.9.x",
