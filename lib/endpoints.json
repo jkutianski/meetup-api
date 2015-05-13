@@ -619,6 +619,20 @@
       }
     }
   },
+  "getStreamOpenEvents": {
+    "resource": "https://stream.meetup.com/2/open_events",
+    "method": "get",
+    "chunked": "true",
+    "test": {
+      "params": {
+        "since_mtime": "1294435118533"
+      },
+      "return": {
+        "type": "object",
+        "keys": ["event_url", "id"]
+      }
+    }
+  },
   "getStreamPhotos": {
     "resource": "ws://stream.meetup.com/2/photos",
     "method": "get",
