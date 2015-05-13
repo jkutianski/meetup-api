@@ -1,4 +1,4 @@
-/*jslint node: true */
+/*jslint node: true, maxcomplexity: 5 */
 'use strict';
 
 console.log('NOTE: Don\'t abuse with the test, or your credentials will be throttled!!!');
@@ -118,6 +118,8 @@ checkEndpoint.ws = function(endpointkey, cb) {
 		});
 };
 
+meetup.commands = (process.argv[2]) ? process.argv[2].split(',') : meetup.commands;
+
 forAllAsync(meetup.commands
 	.filter(function(command) {
 		return endpoints[command].hasOwnProperty('test') &&
@@ -126,8 +128,6 @@ forAllAsync(meetup.commands
 	function(next, command) {
 		if (endpoints[command].resource.match(/^ws\:/)) {
 			checkEndpoint.ws(command, next);
-		} else if (endpoints[command].chunked) {
-			checkEndpoint.http(command, next);
 		} else {
 			setTimeout(function() {
 				checkEndpoint.http(command, next);
