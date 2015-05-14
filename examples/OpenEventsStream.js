@@ -25,5 +25,5 @@ var ovs = meetup.getStreamOpenEvents({
 	}
 	count++;
 }).on('end', function () {
-	console.log("Done!")
+	console.log("Done!");
 });
