@@ -1,7 +1,7 @@
 var assert = require('assert'),
 	key = process.env.MEETUP_KEY;
 
-assert(key, 'MEETUP_KEY variable isn\'t set on enviroment (use \'set \"MEETUP_KEY=key\"'\' on Windows)');
+assert(key, 'MEETUP_KEY variable isn\'t set on enviroment (use \'set \"MEETUP_KEY=key\"\' on Windows)');
 
 var meetup = require('../lib/meetup')({
 	key: key
