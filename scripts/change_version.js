@@ -17,7 +17,7 @@ var fs = require('fs'),
 				  if (err) {
 				  	throw err;
 				  }
-				  console.log("%s new version %s",package.name.toUpperCase(), package.version);
+				  console.log('%s new version %s',package.name.toUpperCase(), package.version);
 				});
 			},
 			enumerable: true,

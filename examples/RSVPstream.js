@@ -6,8 +6,8 @@ var ovs = meetup.getStreamRSVPs()
 		if (count > 10) {
 			ovs.abort();
 		}
-		if (obj.response === "yes") {
-			console.log("%s - %s (%s) at %s (%s)",
+		if (obj.response === 'yes') {
+			console.log('%s - %s (%s) at %s (%s)',
 				count,
 				obj.event.event_name,
 				obj.group.group_name,

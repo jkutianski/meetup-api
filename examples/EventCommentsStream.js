@@ -6,7 +6,7 @@ var ws = meetup.getStreamEventComments()
 		if (count > 10) {
 			ws.abort();
 		}
-		console.log("%s - %s comment: %s",
+		console.log('%s - %s comment: %s',
 			count,
 			obj.member.member_name,
 			obj.comment
@@ -14,5 +14,5 @@ var ws = meetup.getStreamEventComments()
 		count++;
 	})
 	.on('close', function() {
-		console.log("done!");
+		console.log('done!');
 	});

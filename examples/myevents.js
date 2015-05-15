@@ -1,13 +1,13 @@
 ﻿var assert = require('asert');
 
-assert(process.env.MEETUP_KEY, 'MEETUP_KEY variable isn\'t set on enviroment (use \'set "MEETUP_KEY=key"\' on Windows)');
+assert(process.env.MEETUP_KEY, 'MEETUP_KEY variable isn\'t set on enviroment (use \'set 'MEETUP_KEY=key'\' on Windows)');
 
 var meetup = require('../lib/meetup')({
 	key: process.env.MEETUP_KEY
 });
 
 meetup.getEvents({
-	member_id: "self"
+	member_id: 'self'
 }, function(error, events) {
 	if (error) {
 		console.log(error);
