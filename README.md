@@ -18,6 +18,8 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 
 [Todo list][todo-list]
 
+[Applications usign this library][apps-usingthis]
+
 [license-image]: http://img.shields.io/npm/l/meetup-api.svg?style=flat
 [license-url]: https://github.com/jkutianski/meetup-api/blob/master/LICENSE
 [depstat-url]: https://david-dm.org/jkutianski/meetup-api
@@ -38,4 +40,5 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [meetup-api-docs-url]: http://www.meetup.com/meetup_api/docs/
 [javascrip-wikipedia]: http://en.wikipedia.org/wiki/JavaScript
 [nodejs-url]: http://nodejs.org/
+[apps-usingthis]: https://github.com/jkutianski/meetup-api/wiki/Applications-using-this-library
 
