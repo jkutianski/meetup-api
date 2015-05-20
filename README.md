@@ -32,9 +32,9 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [optdepstat-imag]: https://david-dm.org/jkutianski/meetup-api/optional-status.svg?style=flat
 [codeship-image]: http://img.shields.io/codeship/53271a40-6009-0132-2c13-2696ea524dd6/master.svg?style=flat
 [codeship-url]: https://codeship.com/projects/51586
-[gitter-image]: https://badges.gitter.im/Join%20Chat.svg?style=flat
+[gitter-image]: https://img.shields.io/badge/gitter-join%20chat-yellowgreen.svg
 [gitter-url]: https://gitter.im/jkutianski/meetup-api
-[stackoverflow-image]: https://img.shields.io/badge/stackoverflow-meetup--api-blue.svg
+[stackoverflow-image]: https://img.shields.io/badge/stackoverflow-meetup--api-yellowgreen.svg
 [stackoverflow-url]: http://stackoverflow.com/search?q=nodejs-meetup-api
 [codacy-image]: https://www.codacy.com/project/badge/cbe5350e1cc64a35ac73495272dd148e
 [codacy-url]: https://www.codacy.com/public/jkutianski/meetup-api
