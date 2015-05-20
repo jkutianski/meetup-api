@@ -6,6 +6,8 @@ Meetup API library for Node.js
 [![License][license-image]][license-url]
 [![Codeship Status][codeship-image]][codeship-url]
 [![Codacy][codacy-image]][codacy-url]
+
+[![Stackoverflow Thread][stackoverflow-image]][stackoverflow-url]
 [![Gitter chat][gitter-image]][gitter-url]
 
 [![Dependency Status][depstat-image]][depstat-url]
@@ -32,6 +34,8 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [codeship-url]: https://codeship.com/projects/51586
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg?style=flat
 [gitter-url]: https://gitter.im/jkutianski/meetup-api
+[stackoverflow-image]: https://img.shields.io/badge/stackoverflow-meetup--api-blue.svg
+[stackoverflow-url]: http://stackoverflow.com/search?q=nodejs-meetup-api
 [codacy-image]: https://www.codacy.com/project/badge/cbe5350e1cc64a35ac73495272dd148e
 [codacy-url]: https://www.codacy.com/public/jkutianski/meetup-api
 [todo-list]: https://github.com/jkutianski/meetup-api/wiki/Todo
