@@ -1,4 +1,4 @@
-﻿var assert = require('asert');
+﻿var assert = require('assert');
 
 assert(process.env.MEETUP_KEY, 'MEETUP_KEY variable isn\'t set on enviroment (use \'set \"MEETUP_KEY=key\"\' on Windows)');
 
