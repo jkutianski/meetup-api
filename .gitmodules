@@ -1,0 +1,3 @@
+[submodule "wiki"]
+	path = wiki
+	url = ../meetup-api.wiki.git
