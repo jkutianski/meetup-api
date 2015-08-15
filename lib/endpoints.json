@@ -67,7 +67,7 @@
     "method": "post"
   },
   "getCities": {
-    "resource": "https://api.meetup.com/cities",
+    "resource": "https://api.meetup.com/2/cities",
     "method": "get",
     "test": {
       "params": {
@@ -295,6 +295,12 @@
     "resource": "https://api.meetup.com/:urlname",
     "method": "post"
   },
+  "postGroupPhoto": {
+    "resource": "https://api.meetup.com/2/group_photo",
+    "method": "post",
+    "disable": true,
+    "comments": "WARNING: postGroupPhoto() is not implemented yet!"
+  },
   "postTopics": {
     "resource": "/:urlname/topics",
     "method": "post"
@@ -363,7 +369,7 @@
     "method": "post"
   },
   "deleteMemberPhoto": {
-    "resource": "https://api.meetup.com/2/member_photo",
+    "resource": "https://api.meetup.com/2/member_photo/:id",
     "method": "delete"
   },
   "postMessage": {
@@ -385,7 +391,9 @@
   },
   "postPhoto": {
     "resource": "https://api.meetup.com/2/photo",
-    "method": "post"
+    "method": "post",
+    "disable": true,
+    "comments": "WARNING: postPhoto() is not implemented yet!"
   },
   "deletePhoto": {
     "resource": "https://api.meetup.com/2/photo/:id",
