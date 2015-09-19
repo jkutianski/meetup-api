@@ -10,15 +10,27 @@ assert(process.env.MEETUP_KEY, 'MEETUP_KEY variable isn\'t set on enviroment (us
 
 var meetup = require('../lib/meetup')();
 
+// for (var i in meetup) { console.log(i) }
+
 var endpoints = require('../lib/endpoints.json');
 
+assert(meetup.version, 'Can\'t get Version');
+try {
+	meetup.version = '0.0.0';
+} catch(err) {}
+assert(meetup.version === '1.0.0', 'Version not read only');
+
 console.log('%s ver %s Test\n\n', meetup.description, meetup.version);
+
+console.log('Get version\t\tPASS');
 
 assert(!meetup.authkey, 'Authkey getter failed');
 console.log('Authkey getter\t\tPASS');
 meetup.authkey = process.env.MEETUP_KEY;
 assert(meetup.authkey, 'Authkey setter failed');
 console.log('Authkey setter\t\tPASS');
+
+assert(meetup.dependencies.superagent, 'Superagent version not set');
 try {
 	meetup.dependencies.superagent = 0;
 } catch (err) {}
@@ -41,7 +53,7 @@ var checkEndpoint = {};
 checkEndpoint.http = function(endpointkey, cb) {
 	if (endpoints[endpointkey].chunked) {
 		var chnk = meetup[endpointkey](endpoints[endpointkey].test.params)
-			.on('data', function(ret) {
+			.on('data', ret => {
 				chnk.abort();
 				assert.equal(objectType(ret), endpoints[endpointkey].test.return.type, endpointkey + ' not return an ' + endpoints[endpointkey].test.return.type);
 				switch (objectType(ret)) {
@@ -61,8 +73,9 @@ checkEndpoint.http = function(endpointkey, cb) {
 				cb();
 			});
 	} else {
-		meetup[endpointkey](endpoints[endpointkey].test.params, function(err, ret) {
-			(function(errors) {
+		meetup[endpointkey](endpoints[endpointkey].test.params, (err, ret) => {
+			((errors) => {
+				ret = ret || {};
 				ret.problem = errors || ret.problem;
 				ret.code = errors && errors.code || ret.problem;
 				ret.details = errors && errors.message || ret.details;
@@ -81,7 +94,7 @@ checkEndpoint.http = function(endpointkey, cb) {
 				case 'object':
 					assert(endpoints[endpointkey].test.return.keys, endpointkey + ' hasn\'t defined keys on endpoints.json');
 
-					endpoints[endpointkey].test.return.keys.forEach(function(returnkey) {
+					endpoints[endpointkey].test.return.keys.forEach(returnkey => {
 						assert(ret.hasOwnProperty(returnkey), endpointkey + ' not return the ' + returnkey + ' key');
 					});
 
@@ -98,7 +111,7 @@ checkEndpoint.http = function(endpointkey, cb) {
 
 checkEndpoint.ws = function(endpointkey, cb) {
 	var ws = meetup[endpointkey](endpoints[endpointkey].params)
-		.on('data', function(ret) {
+		.on('data', (ret) => {
 			ws.abort();
 			switch (objectType(ret)) {
 				case 'object':
@@ -112,30 +125,47 @@ checkEndpoint.ws = function(endpointkey, cb) {
 				default:
 			}
 		})
-		.on('close', function() {
+		.on('close', () => {
 			console.log('%s\t\tPASS', endpointkey);
 			cb();
 		});
 };
 
-meetup.commands = (process.argv[2]) ? process.argv[2].split(',') : meetup.commands;
+var meetup_commands = (process.argv[2]) ? process.argv[2].split(',') : meetup.commands;
 
-forAllAsync(meetup.commands
-	.filter(function(command) {
+forAllAsync(meetup_commands
+	.filter(command => {
 		return endpoints[command].hasOwnProperty('test') &&
 			!endpoints[command].test.hasOwnProperty('disabled');
 	}),
-	function(next, command) {
+	(next, command) => {
 		if (endpoints[command].resource.match(/^ws\:/)) {
 			checkEndpoint.ws(command, next);
 		} else {
-			setTimeout(function() {
+			setTimeout(() => {
 				checkEndpoint.http(command, next);
 			}, 1000);
 		}
 	},
 	1
 );
+
+// function* test(method) {        
+//         	var protocol = (endpoints[method].resource.match(/^ws\:/)) ? 'ws' : 'http';
+//             yield checkEndpoint[protocol](method, () => test(method).next);
+//             console.log(method);     
+// };
+
+// for (var method of meetup) {
+//     if (endpoints[method].hasOwnProperty('test') && !endpoints[method].test.hasOwnProperty('disabled')) {
+//         setTimeout(() => {
+//             test(method).next();
+//         }, 0);
+//     }
+// }
+
+
+// test(methods).next();
 
 process.on('exit', function(code) {
 	if (!code) {
