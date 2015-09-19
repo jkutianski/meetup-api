@@ -3,8 +3,7 @@
 
 console.log('NOTE: Don\'t abuse with the test, or your credentials will be throttled!!!');
 
-var assert = require('assert'),
-	forAllAsync = require('forallasync').forAllAsync;
+var assert = require('assert');
 
 assert(process.env.MEETUP_KEY, 'MEETUP_KEY variable isn\'t set on enviroment (use \'set \"MEETUP_KEY=key\"\' on Windows)');
 
@@ -131,41 +130,18 @@ checkEndpoint.ws = function(endpointkey, cb) {
 		});
 };
 
-var meetup_commands = (process.argv[2]) ? process.argv[2].split(',') : meetup.commands;
-
-forAllAsync(meetup_commands
-	.filter(command => {
-		return endpoints[command].hasOwnProperty('test') &&
-			!endpoints[command].test.hasOwnProperty('disabled');
-	}),
-	(next, command) => {
-		if (endpoints[command].resource.match(/^ws\:/)) {
-			checkEndpoint.ws(command, next);
-		} else {
-			setTimeout(() => {
-				checkEndpoint.http(command, next);
-			}, 1000);
-		}
-	},
-	1
-);
-
-// function* test(method) {        
-//         	var protocol = (endpoints[method].resource.match(/^ws\:/)) ? 'ws' : 'http';
-//             yield checkEndpoint[protocol](method, () => test(method).next);
-//             console.log(method);     
-// };
-
-// for (var method of meetup) {
-//     if (endpoints[method].hasOwnProperty('test') && !endpoints[method].test.hasOwnProperty('disabled')) {
-//         setTimeout(() => {
-//             test(method).next();
-//         }, 0);
-//     }
-// }
+function* test(method) {
+    var protocol = (endpoints[method].resource.match(/^ws\:/)) ? 'ws' : 'http';
+    yield checkEndpoint[protocol](method, () => test(method).next);
+    console.log(method);
+};
 
 
-// test(methods).next();
+for (var method of meetup) {
+    if (endpoints[method].hasOwnProperty('test') && !endpoints[method].test.hasOwnProperty('disabled')) {
+    	test(method).next();
+    }
+}
 
 process.on('exit', function(code) {
 	if (!code) {

@@ -30,9 +30,6 @@
     "oauth": "0.9.x",
     "superagent-oauth": "0.2.x"
   },
-  "devDependencies": {
-    "forallasync": "1.0.x"
-  },
   "repository": {
     "type": "git",
     "url": "http://github.com/jkutianski/meetup-api.git"
