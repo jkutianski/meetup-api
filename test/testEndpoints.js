@@ -139,7 +139,9 @@ function* test(method) {
 
 for (var method of meetup) {
     if (endpoints[method].hasOwnProperty('test') && !endpoints[method].test.hasOwnProperty('disabled')) {
-    	test(method).next();
+        setTimeout(() => {
+            test(method).next();
+        }, 0);
     }
 }
 
