@@ -1,7 +1,7 @@
 Meetup API library for Node.js
 ==============================
 
-To use with Node.js previous to v4.0.0, please use [this branch][v0.1.x]
+To use with Node.js < v4.0.0, please use [this branch][v0.1.x]
 
 [![NPM](https://nodei.co/npm/meetup-api.png)](https://nodei.co/npm/meetup-api)
 
