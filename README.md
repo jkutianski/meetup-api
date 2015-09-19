@@ -1,6 +1,10 @@
 Meetup API library for Node.js
 ==============================
 
+This version is to use on Node.js previous to v4.0.0
+
+To install it via NPM you should type `npm install meetup-api@0.1.x`
+
 [![NPM](https://nodei.co/npm/meetup-api.png)](https://nodei.co/npm/meetup-api)
 
 [![License][license-image]][license-url]
