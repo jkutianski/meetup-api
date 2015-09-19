@@ -1,40 +1,43 @@
 {
-  "name": "meetup-api",
-  "description": "Meetup API library",
-  "version": "0.1.28",
-  "license": "GPL-3.0",
-  "directories": {
-    "lib": "./lib",
-    "example": "./examples"
-  },
-  "keywords": [
-    "meetup",
-    "api"
-  ],
-  "main": "index.js",
-  "author": "Juan Pablo Kutianski <jkutianski@gmail.com>",
-  "bugs": {
-    "url": "http://github.com/jkutianski/meetup-api/issues"
-  },
-  "dependencies": {
-    "node.extend": "1.1.x",
-    "superagent": "1.4.x",
-    "websocket-stream": "2.0.x",
-    "JSONStream": "1.0.x",
-    "event-stream": "3.3.x"
-  },
-  "optionalDependencies": {
-    "oauth": "0.9.x",
-    "superagent-oauth": "0.2.x"
-  },
-  "devDependencies": {
-    "forallasync": "1.0.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/jkutianski/meetup-api.git"
-  },
-  "scripts": {
-    "test": "node ./test/testEndpoints.js"
-  }
+    "name": "meetup-api",
+    "description": "Meetup API library",
+    "version": "0.1.29",
+    "license": "GPL-3.0",
+    "directories": {
+        "lib": "./lib",
+        "example": "./examples"
+    },
+    "keywords": [
+        "meetup",
+        "api"
+    ],
+    "main": "index.js",
+    "author": "Juan Pablo Kutianski <jkutianski@gmail.com>",
+    "bugs": {
+        "url": "http://github.com/jkutianski/meetup-api/issues"
+    },
+    "dependencies": {
+        "node.extend": "1.1.x",
+        "superagent": "1.4.x",
+        "websocket-stream": "2.0.x",
+        "JSONStream": "1.0.x",
+        "event-stream": "3.3.x"
+    },
+    "optionalDependencies": {
+        "oauth": "0.9.x",
+        "superagent-oauth": "0.2.x"
+    },
+    "devDependencies": {
+        "forallasync": "1.0.x"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/jkutianski/meetup-api.git"
+    },
+    "scripts": {
+        "test": "node ./test/testEndpoints.js"
+    },
+    "publishConfig": {
+        "tag": "pre4"
+    }
 }
