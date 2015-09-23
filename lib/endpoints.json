@@ -119,10 +119,11 @@
     }
   },
   "getEvent": {
-    "resource": "https://api.meetup.com/2/event/:id",
+    "resource": "https://api.meetup.com/:urlname/events/:id",
     "method": "get",
     "test": {
       "params": {
+        "urlname": "NodeJS-Argentina",
         "id": "79797122"
       },
       "return": {
@@ -252,6 +253,23 @@
     "resource": "https://api.meetup.com/:urlname/events/:id/attendance",
     "method": "post"
   },
+  "getEventAttendance": {
+    "resource": "https://api.meetup.com/:urlname/events/:id/attendance",
+    "method": "get",
+    "test": {
+      "params": {
+        "id": "79797122",
+        "urlname": "NodeJS-Argentina"
+      },
+      "return": {
+        "type": "array"
+      }
+    }
+  },
+  "postEventPayments": {
+    "resource": "https://api.meetup.com/:urlname/events/:id/payments",
+    "method": "post"
+  },
   "getActivity": {
     "resource": "https://api.meetup.com/activity",
     "method": "get",
@@ -298,8 +316,35 @@
   "postGroupPhoto": {
     "resource": "https://api.meetup.com/2/group_photo",
     "method": "post",
-    "disable": true,
-    "comments": "WARNING: postGroupPhoto() is not implemented yet!"
+    "multipart_photo": true
+  },
+  "findGroups": {
+    "resource": "https://api.meetup.com/find/groups",
+    "method": "get",
+    "test": {
+      "params": {
+        "page": 1
+      },
+      "return": {
+        "type": "array"
+      }
+    }
+  },
+  "getRecommendedGroups": {
+    "resource": "https://api.meetup.com/recommended/groups",
+    "method": "get",
+    "test": {
+      "params": {
+        "urlname": "NodeJS-Argentina"
+      },
+      "return": {
+        "type": "array"
+      }
+    }
+  },
+  "postRecommendedGroupsIgnore": {
+    "resource": " /recommended/groups/ignores/:urlname",
+    "method": "post"
   },
   "postTopics": {
     "resource": "/:urlname/topics",
@@ -366,15 +411,12 @@
   },
   "postMemberPhoto": {
     "resource": "https://api.meetup.com/2/member_photo",
-    "method": "post"
+    "method": "post",
+    "multipart_photo": true
   },
   "deleteMemberPhoto": {
     "resource": "https://api.meetup.com/2/member_photo/:id",
     "method": "delete"
-  },
-  "postMessage": {
-    "resource": "https://api.meetup.com/2/message",
-    "method": "post"
   },
   "getOEMBed": {
     "resource": "https://api.meetup.com/oembed",
@@ -392,8 +434,7 @@
   "postPhoto": {
     "resource": "https://api.meetup.com/2/photo",
     "method": "post",
-    "disable": true,
-    "comments": "WARNING: postPhoto() is not implemented yet!"
+    "multipart_photo": true
   },
   "deletePhoto": {
     "resource": "https://api.meetup.com/2/photo/:id",
@@ -591,7 +632,6 @@
     "method": "get",
     "test": {
       "params": {
-
         "fields": "stats"
       },
       "return": {
@@ -630,7 +670,7 @@
   "getStreamOpenEvents": {
     "resource": "https://stream.meetup.com/2/open_events",
     "method": "get",
-    "chunked": "true",
+    "chunked": true,
     "test": {
       "params": {
         "since_mtime": "1294435118533"
