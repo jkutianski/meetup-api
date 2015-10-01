@@ -18,7 +18,7 @@ assert(meetup.version, 'Can\'t get Version');
 try {
 	meetup.version = '0.0.0';
 } catch(err) {}
-assert(meetup.version === '1.0.0', 'Version not read only');
+assert(meetup.version !== '0.0.0', 'Version not read only');
 
 console.log('%s ver %s Test\n\n', meetup.description, meetup.version);
 
@@ -112,6 +112,7 @@ checkEndpoint.http = function(endpointkey, cb) {
 checkEndpoint.ws = function(endpointkey, cb) {
 	var ws = meetup[endpointkey](endpoints[endpointkey].params)
 		.on('data', (ret) => {
+			ws.removeAllListeners('data');
 			ws.abort();
 			switch (objectType(ret)) {
 				case 'object':
