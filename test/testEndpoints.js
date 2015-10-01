@@ -112,6 +112,7 @@ checkEndpoint.http = function(endpointkey, cb) {
 checkEndpoint.ws = function(endpointkey, cb) {
 	var ws = meetup[endpointkey](endpoints[endpointkey].params)
 		.on('data', (ret) => {
+			ws.removeAllListeners('data');
 			ws.abort();
 			switch (objectType(ret)) {
 				case 'object':
