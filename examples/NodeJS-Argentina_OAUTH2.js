@@ -24,7 +24,7 @@ var server = http.createServer(function(request, response) {
     if (oauth_token) {
         meetup.getOAuth2AccessToken(oauth_token, function(error) {
         	if (error) console.warn(error);
-            // meetup.refreshOAuth2AccessToken(function(error) {
+            // meetup.refreshOAuth2AccessToken(null, function(error) {
             	if (error) console.warn(error);
                 meetup.getGroup({
                     'urlname': 'NodeJS-Argentina'
