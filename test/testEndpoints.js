@@ -74,8 +74,9 @@ checkEndpoint.http = function(endpointkey, cb) {
 			});
 	} else {
 		meetup[endpointkey](endpoints[endpointkey].test.params, (err, ret) => {
+			ret = ret || {};
+			
 			((errors) => {
-				ret = ret || {};
 				ret.problem = errors || ret.problem;
 				ret.code = errors && errors.code || ret.problem;
 				ret.details = errors && errors.message || ret.details;
