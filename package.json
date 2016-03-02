@@ -1,7 +1,7 @@
 {
   "name": "meetup-api",
   "description": "Meetup API library",
-  "version": "1.3.7",
+  "version": "1.3.8",
   "license": "GPL-3.0",
   "directories": {
     "lib": "./lib",
@@ -23,7 +23,7 @@
   "dependencies": {
     "superagent": "1.7.x",
     "websocket-stream": "3.1.x",
-    "JSONStream": "1.0.x",
+    "JSONStream": "1.1.x",
     "event-stream": "3.3.x"
   },
   "optionalDependencies": {
@@ -39,5 +39,6 @@
   },
   "scripts": {
     "test": "node ./test/testEndpoints.js"
-  }
+  },
+  "tonicExample": "var _meetup = require('meetup-api')();"
 }
