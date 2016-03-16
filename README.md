@@ -22,7 +22,7 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 
 [Todo list][todo-list]
 
-[Applications usign this library][apps-usingthis]
+[Applications using this library][apps-usingthis]
 
 [![Package Quality][packagequality-img]][packagequality-url]
 
