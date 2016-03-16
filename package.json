@@ -40,5 +40,5 @@
   "scripts": {
     "test": "node ./test/testEndpoints.js"
   },
-  "tonicExample": "var _meetup = require('meetup-api')();"
+  "tonicExampleFilename": "tonicExample.js"
 }
