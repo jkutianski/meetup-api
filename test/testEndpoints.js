@@ -87,8 +87,6 @@ checkEndpoint.http = function(endpointkey, cb) {
 
 			assert(!ret.problem, ret.code + ' (' + ret.details + ')\n');
 
-			assert(!err, err);
-
 			assert.equal(objectType(ret), endpoints[endpointkey].test.return.type, endpointkey + ' not return an ' + endpoints[endpointkey].test.return.type);
 
 			switch (objectType(ret)) {
@@ -96,12 +94,14 @@ checkEndpoint.http = function(endpointkey, cb) {
 					assert(endpoints[endpointkey].test.return.keys, endpointkey + ' hasn\'t defined keys on endpoints.json');
 
 					endpoints[endpointkey].test.return.keys.forEach(returnkey => {
-						assert(ret.hasOwnProperty(returnkey), endpointkey + ' not return the ' + returnkey + ' key');
+						assert(ret.hasOwnProperty(returnkey), 'Method ' + endpointkey + ' don\'t return the "' + returnkey + '" key');
 					});
 
 					break;
 				default:
 			}
+
+			assert(!err, err);
 
 			console.log('%s\t\tPASS', endpointkey);
 			cb();
