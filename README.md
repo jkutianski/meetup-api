@@ -14,10 +14,6 @@ To install it via NPM you should type `npm install meetup-api@pre4`
 [![Stackoverflow Thread][stackoverflow-image]][stackoverflow-url]
 [![Gitter chat][gitter-image]][gitter-url]
 
-[![Dependency Status][depstat-image]][depstat-url]
-[![devDependency Status][devdepstat-imag]][devdepstat-url]
-[![optionalDependency Status][optdepstat-imag]][optdepstat-url]
-
 meetup-api is an [Meetup.com][meetup-url] API library written in [JavaScript][javascrip-wikipedia] for [Node.js][nodejs-url].
 
 You can access more detailed documentation about the API at [Meetup API Docs site][meetup-api-docs-url] and [meetup-api Wiki pages][wiki-url]
@@ -30,13 +26,6 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 
 [license-image]: http://img.shields.io/npm/l/meetup-api.svg?style=flat
 [license-url]: https://github.com/jkutianski/meetup-api/blob/master/LICENSE
-[depstat-url]: https://david-dm.org/jkutianski/meetup-api
-[depstat-image]: https://david-dm.org/jkutianski/meetup-api.svg
-[devdepstat-url]: https://david-dm.org/jkutianski/meetup-api#info=devDependencies
-[devdepstat-imag]: https://david-dm.org/jkutianski/meetup-api/dev-status.svg
-[optdepstat-url]: https://david-dm.org/jkutianski/meetup-api#info=optionalDependencies
-[optdepstat-imag]: https://david-dm.org/jkutianski/meetup-api/optional-status.svg?style=flat
-https://img.shields.io/codeship/c9589b70-044a-0134-8288-66ea79cc2349/1.X.X.svg?style=flat
 [codeship-image]: https://img.shields.io/codeship/c9589b70-044a-0134-8288-66ea79cc2349/0.X.X.svg?style=flat
 [codeship-url]: https://codeship.com/projects/154113
 [gitter-image]: https://img.shields.io/badge/gitter-join%20chat-yellowgreen.svg
