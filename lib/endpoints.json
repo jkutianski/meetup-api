@@ -296,6 +296,10 @@
       }
     }
   },
+  "getPROGroups": {
+    "resource": "https://api.meetup.com/pro/:urlname/groups",
+    "method": "get"
+  },
   "getGroup": {
     "resource": "https://api.meetup.com/:urlname",
     "method": "get",
@@ -391,6 +395,10 @@
         "keys": ["results", "meta"]
       }
     }
+  },
+  "getPROMembers": {
+    "resource": "https://api.meetup.com/pro/:urlname/members",
+    "method": "get"
   },
   "getMember": {
     "resource": "https://api.meetup.com/2/member/:id",
