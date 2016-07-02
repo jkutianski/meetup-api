@@ -714,5 +714,48 @@
         "keys": ["id", "member"]
       }
     }
+  },
+  "getLocations": {
+    "resource": "https://api.meetup.com/find/locations",
+    "method": "get",
+    "test": {
+      "params": {
+        "lon": "-58.381592",
+        "lat": "-34.603722"
+      },
+      "return": {
+        "type": "array"
+      }
+    }
+  },
+  "getSelfEvents": {
+    "resource": "https://api.meetup.com/self/events",
+    "method": "get",
+    "test": {
+      "params": {},
+      "return": {
+        "type": "array"
+      }
+    }
+  },
+  "getSelfCalendar": {
+    "resource": "https://api.meetup.com/self/calendar",
+    "method": "get",
+    "test": {
+      "params": {},
+      "return": {
+        "type": "array"
+      }
+    }
+  },
+  "getSelfGroups": {
+    "resource": "https://api.meetup.com/self/groups",
+    "method": "get",
+    "test": {
+      "params": {},
+      "return": {
+        "type": "array"
+      }
+    }
   }
 }
