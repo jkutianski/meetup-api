@@ -1,7 +1,7 @@
 var _meetup = require('meetup-api')();
 
 _meetup.getLocations({
-	"query": "córdoba"
+	query: 'Córdoba'
 }, function (err, results) {
     console.log(results);
 });
