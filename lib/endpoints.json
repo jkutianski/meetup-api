@@ -612,6 +612,18 @@
       }
     }
   },
+  "findTopics": {
+    "resource": "https://api.meetup.com/find/topics",
+    "method": "get",
+    "test": {
+      "params": {
+        "query": "javascript"
+      },
+      "return": {
+        "type": "array"
+      }
+    }
+  },
   "getTopicCategories": {
     "resource": "https://api.meetup.com/2/topic_categories",
     "method": "get",
@@ -620,6 +632,16 @@
       "return": {
         "type": "object",
         "keys": ["results", "meta"]
+      }
+    }
+  },
+  "findTopicCategories": {
+    "resource": "https://api.meetup.com/find/topic_categories",
+    "method": "get",
+    "test": {
+      "params": {},
+      "return": {
+        "type": "array"
       }
     }
   },
