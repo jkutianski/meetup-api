@@ -38,10 +38,17 @@ var server = http.createServer(function(request, response) {
 		});
 	} else {
 		meetup.getOAuthRequestToken(function(error, Url) {
-			response.writeHead(302, {
-				Location: Url
-			});
-			response.end();
+			if (!error) {
+				response.writeHead(302, {
+					Location: Url
+				});
+				response.end();
+			} else {
+				response.writeHead(500, {
+						'Content-Type': 'application/json'
+				});
+				response.end(JSON.stringify(error));
+			}			
 		});
 	}
 });
