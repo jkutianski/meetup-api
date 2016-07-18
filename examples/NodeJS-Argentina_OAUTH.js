@@ -24,12 +24,12 @@ var server = http.createServer(function(request, response) {
 			}, function(err, obj) {
 				if (err) {
 					response.writeHead(200, {
-						'Content-Type': 'application/javascript'
+						'Content-Type': 'application/json'
 					});
 					response.end(JSON.stringify(err));
 				} else {
 					response.writeHead(200, {
-						'Content-Type': 'application/javascript'
+						'Content-Type': 'application/json'
 					});
 					response.end(JSON.stringify(obj));
 				}
