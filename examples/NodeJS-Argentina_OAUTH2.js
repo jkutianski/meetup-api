@@ -47,10 +47,17 @@ var server = http.createServer(function(request, response) {
         meetup.getOAuth2RequestToken({
             redirect: 'http://localhost:8000/'
         }, function(error, Url) {
-            response.writeHead(302, {
-                Location: Url
-            });
-            response.end();
+            if (!error) {
+                response.writeHead(302, {
+                    Location: Url
+                });
+                response.end();
+            } else {
+                response.writeHead(500, {
+                        'Content-Type': 'application/json'
+                });
+                response.end(JSON.stringify(error));
+            }
         });
     }
 });
