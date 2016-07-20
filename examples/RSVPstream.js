@@ -1,6 +1,8 @@
 var meetup = require('../lib/meetup')(),
 	count = 1;
 
+meetup.proxy = "http://localhost:3128";
+
 var ovs = meetup.getStreamRSVPs()
 	.on('data', function(obj) {
 		if (count > 10) {
