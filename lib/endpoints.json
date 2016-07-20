@@ -685,7 +685,7 @@
     "method": "post"
   },
   "getStreamRSVPs": {
-    "resource": "ws://stream.meetup.com/2/rsvps",
+    "resource": "wss://stream.meetup.com/2/rsvps",
     "method": "get",
     "test": {
       "params": {
@@ -712,7 +712,7 @@
     }
   },
   "getStreamPhotos": {
-    "resource": "ws://stream.meetup.com/2/photos",
+    "resource": "wss://stream.meetup.com/2/photos",
     "method": "get",
     "test": {
       "params": {
@@ -725,7 +725,7 @@
     }
   },
   "getStreamEventComments": {
-    "resource": "ws://stream.meetup.com/2/event_comments",
+    "resource": "wss://stream.meetup.com/2/event_comments",
     "method": "get",
     "test": {
       "params": {
