@@ -12,5 +12,5 @@ meetup.getGroup({
     if (err) {
         console.error('Found meetup error', err);
     }
-    console.log(resp)
+    console.log(resp);
 });
