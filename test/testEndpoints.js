@@ -141,7 +141,7 @@ forAllAsync(meetup_commands
 			!endpoints[command].test.hasOwnProperty('disabled');
 	}),
 	(next, command) => {
-		if (endpoints[command].resource.match(/^wss*\:/)) {
+		if (endpoints[command].resource.match(/^ws{1,2}\:/)) {
 			checkEndpoint.ws(command, next);
 		} else {
 			setTimeout(() => {
