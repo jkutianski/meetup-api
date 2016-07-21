@@ -1,9 +1,6 @@
 var assert = require('assert'),
-    util = require('util'),
     http = require('http'),
     url = require('url'),
-    path = require('path'),
-    fs = require('fs'),
     oauth_token;
 
 assert(process.env.MEETUP_OAUTH, 'MEETUP_OAUTH variable isn\'t set on enviroment (use \'set \"MEETUP_OAUTH={\'key\': \'your_token\', \'secret\': \'your_secret\'}\"\' on Windows)');
