@@ -28,7 +28,7 @@
   },
   "optionalDependencies": {
     "oauth": "0.9.x",
-    "https-proxy-agent": "^1.0.0",
+    "proxy-agent": "2.0.x",
     "superagent-oauth": "0.2.x"
   },
   "devDependencies": {
