@@ -1,7 +1,9 @@
 var meetup = require('../lib/meetup')(),
 	count = 1;
 
-// meetup.proxy = 'http://localhost:3128';
+meetup.proxy = 'http://localhost:3128';
+
+console.log('Use proxy:', meetup.proxy);
 
 var ovs = meetup.getStreamRSVPs()
 	.on('data', function(obj) {
