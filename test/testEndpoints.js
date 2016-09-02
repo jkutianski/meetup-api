@@ -30,6 +30,16 @@ meetup.authkey = process.env.MEETUP_KEY;
 assert(meetup.authkey, 'Authkey setter failed');
 console.log('Authkey setter\t\tPASS');
 
+
+assert(!meetup.proxy, 'Proxy getter failed');
+console.log('Proxy getter\t\tPASS');
+meetup.proxy = 'http://localhost:3128';
+assert(meetup.proxy, 'Proxy setter failed');
+meetup.proxy = null;
+assert(!meetup.proxy, 'Proxy setter failed');
+console.log('Proxy setter\t\tPASS');
+
+
 assert(meetup.dependencies.superagent, 'Superagent version not set');
 try {
 	meetup.dependencies.superagent = 0;
