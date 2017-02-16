@@ -122,9 +122,9 @@ checkEndpoint.http = function(endpointkey, cb) {
 
 checkEndpoint.ws = function(endpointkey, cb) {
 	var ws = meetup[endpointkey](endpoints[endpointkey].params)
-		.on('data', (ret) => {
-			ws.removeAllListeners('data');
+		.on('data', (ret) => {			
 			ws.abort();
+			
 			switch (objectType(ret)) {
 				case 'object':
 					assert(endpoints[endpointkey].test.return.keys, endpointkey + ' hasn\'t defined keys on endpoints.json');
@@ -138,6 +138,7 @@ checkEndpoint.ws = function(endpointkey, cb) {
 			}
 		})
 		.on('close', () => {
+			ws.removeAllListeners('data');
 			console.log('%s\t\tPASS', endpointkey);
 			cb();
 		});
