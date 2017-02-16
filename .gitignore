@@ -7,6 +7,8 @@ lib-cov
 *.pid
 *.gz
 
+keys.bat
+
 pids
 logs
 results
