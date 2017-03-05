@@ -387,16 +387,7 @@
   },
   "getOEMBed": {
     "resource": "https://api.meetup.com/oembed",
-    "method": "get",
-    "test": {
-      "params": {
-        "url": "http://www.meetup.com/banodejs/events/221235192/"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["type", "html"]
-      }
-    }
+    "method": "get"
   },
   "postPhoto": {
     "resource": "https://api.meetup.com/2/photo",
