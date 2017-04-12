@@ -1,733 +1,742 @@
 {
-  "getStatus": {
-    "resource": "https://api.meetup.com/status",
-    "method": "get",
-    "test": {
-      "params": {},
-      "return": {
-        "type": "object",
-        "keys": ["status"]
-      }
+    "getStatus": {
+        "resource": "https://api.meetup.com/status",
+        "method": "get",
+        "test": {
+            "params": {},
+            "return": {
+                "type": "object",
+                "keys": ["status"]
+            }
+        }
+    },
+    "getBoards": {
+        "resource": "https://api.meetup.com/:urlname/boards",
+        "method": "get",
+        "test": {
+            "params": {
+                "urlname": "banodejs"
+            },
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "getDiscussions": {
+        "resource": "https://api.meetup.com/:urlname/boards/:bid/discussions",
+        "method": "get"
+    },
+    "getDiscussion": {
+        "resource": "https://api.meetup.com/:urlname/boards/:bid/discussions/:did",
+        "method": "get"
+    },
+    "getCategories": {
+        "resource": "https://api.meetup.com/2/categories",
+        "method": "get",
+        "test": {
+            "params": {
+                "page": "20"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "postCheckin": {
+        "resource": "https://api.meetup.com/2/checkin",
+        "method": "post"
+    },
+    "getCities": {
+        "resource": "https://api.meetup.com/2/cities",
+        "method": "get",
+        "test": {
+            "params": {
+                "page": "20"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getOpenEvents": {
+        "resource": "https://api.meetup.com/2/open_events",
+        "method": "get",
+        "test": {
+            "params": {
+                "topic": "javascript"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getConcierge": {
+        "resource": "https://api.meetup.com/2/concierge",
+        "method": "get",
+        "test": {
+            "params": {
+                "country": "argentina"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getEvents": {
+        "resource": "https://api.meetup.com/2/events",
+        "method": "get",
+        "test": {
+            "params": {
+                "group_urlname": "banodejs"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getEvent": {
+        "resource": "https://api.meetup.com/:urlname/events/:id",
+        "method": "get",
+        "test": {
+            "params": {
+                "urlname": "banodejs",
+                "id": "221235192"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["status", "venue", "id", "group"]
+            }
+        }
+    },
+    "postEvent": {
+        "resource": "https://api.meetup.com/2/event",
+        "method": "post"
+    },
+    "editEvent": {
+        "resource": "https://api.meetup.com/2/event/:id",
+        "method": "post"
+    },
+    "deleteEvent": {
+        "resource": "https://api.meetup.com/2/event/:id",
+        "method": "delete"
+    },
+    "getEventComments": {
+        "resource": "https://api.meetup.com/2/event_comments",
+        "method": "get",
+        "test": {
+            "params": {
+                "group_id": "18405217"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getEventComment": {
+        "resource": "https://api.meetup.com/2/event_comment/:id",
+        "method": "get",
+        "test": {
+            "params": {
+                "id": "469881308"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["comment", "event_id"]
+            }
+        }
+    },
+    "postEventComment": {
+        "resource": "https://api.meetup.com/2/event_comment",
+        "method": "post"
+    },
+    "deleteEventComment": {
+        "resource": "https://api.meetup.com/2/event_comment/:id",
+        "method": "delete"
+    },
+    "postEventCommentSubscribe": {
+        "resource": "https://api.meetup.com/2/event_comment_subscribe/:id",
+        "method": "post"
+    },
+    "deleteEventCommentSubscribe": {
+        "resource": "https://api.meetup.com/2/event_comment_subscribe/:id",
+        "method": "delete"
+    },
+    "postEventCommentFlag": {
+        "resource": "https://api.meetup.com/2/event_comment_flag",
+        "method": "post"
+    },
+    "getEventCommentLikes": {
+        "resource": "https://api.meetup.com/2/event_comment_likes",
+        "method": "get",
+        "test": {
+            "params": {
+                "comment_id": "113951632"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "postEventCommentLike": {
+        "resource": "https://api.meetup.com/2/event_comment_like/:id",
+        "method": "post"
+    },
+    "deleteEventCommentLike": {
+        "resource": "https://api.meetup.com/2/event_comment_like/:id",
+        "method": "delete"
+    },
+    "postEventsWatchlist": {
+        "resource": "https://api.meetup.com/:urlname/events/:id/watchlist",
+        "method": "post"
+    },
+    "deleteEventsWatchlist": {
+        "resource": "https://api.meetup.com/:urlname/events/:id/watchlist",
+        "method": "delete"
+    },
+    "getEventRatings": {
+        "resource": "https://api.meetup.com/2/event_ratings",
+        "method": "get",
+        "test": {
+            "params": {
+                "event_id": "221235192"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "postEventRating": {
+        "resource": "https://api.meetup.com/2/event_rating",
+        "method": "post"
+    },
+    "getEventAttendance": {
+        "resource": "https://api.meetup.com/:urlname/events/:id/attendance",
+        "method": "get"
+    },
+    "takeEventAttendance": {
+        "resource": "https://api.meetup.com/:urlname/events/:id/attendance",
+        "method": "post"
+    },
+    "postEventPayments": {
+        "resource": "https://api.meetup.com/:urlname/events/:id/payments",
+        "method": "post"
+    },
+    "getActivity": {
+        "resource": "https://api.meetup.com/activity",
+        "method": "get",
+        "test": {
+            "params": {
+                "page_start": "0"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getGroups": {
+        "resource": "https://api.meetup.com/2/groups",
+        "method": "get",
+        "test": {
+            "params": {
+                "group_id": "4603552"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getPROGroups": {
+        "resource": "https://api.meetup.com/pro/:urlname/groups",
+        "method": "get"
+    },
+    "getGroup": {
+        "resource": "https://api.meetup.com/:urlname",
+        "method": "get",
+        "test": {
+            "params": {
+                "urlname": "banodejs"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["urlname", "id"]
+            }
+        }
+    },
+    "editGroup": {
+        "resource": "https://api.meetup.com/:urlname",
+        "method": "post"
+    },
+    "postGroupPhoto": {
+        "resource": "https://api.meetup.com/2/group_photo",
+        "method": "post",
+        "multipart_photo": true
+    },
+    "findGroups": {
+        "resource": "https://api.meetup.com/find/groups",
+        "method": "get",
+        "test": {
+            "params": {
+                "page": 1
+            },
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "getRecommendedGroups": {
+        "resource": "https://api.meetup.com/recommended/groups",
+        "method": "get",
+        "test": {
+            "params": {
+                "urlname": "banodejs"
+            },
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "postRecommendedGroupsIgnore": {
+        "resource": " /recommended/groups/ignores/:urlname",
+        "method": "post"
+    },
+    "postTopics": {
+        "resource": "/:urlname/topics",
+        "method": "post"
+    },
+    "deleteTopics": {
+        "resource": "/:urlname/topics",
+        "method": "delete"
+    },
+    "getSimilarGroups": {
+        "resource": "https://api.meetup.com/:urlname/similar_groups",
+        "method": "get",
+        "test": {
+            "params": {
+                "urlname": "banodejs"
+            },
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "getComments": {
+        "resource": "https://api.meetup.com/comments",
+        "method": "get",
+        "test": {
+            "params": {
+                "group_id": "4603552"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getMembers": {
+        "resource": "https://api.meetup.com/2/members",
+        "method": "get",
+        "test": {
+            "params": {
+                "group_id": "4603552"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getPROMembers": {
+        "resource": "https://api.meetup.com/pro/:urlname/members",
+        "method": "get"
+    },
+    "getMember": {
+        "resource": "https://api.meetup.com/2/member/:id",
+        "method": "get",
+        "test": {
+            "params": {
+                "id": "46861012"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["id", "name"]
+            }
+        }
+    },
+    "editMember": {
+        "resource": "https://api.meetup.com/2/member/:id",
+        "method": "post"
+    },
+    "postMemberPhoto": {
+        "resource": "https://api.meetup.com/2/member_photo",
+        "method": "post",
+        "multipart_photo": true
+    },
+    "deleteMemberPhoto": {
+        "resource": "https://api.meetup.com/2/member_photo/:id",
+        "method": "delete"
+    },
+    "getOEMBed": {
+        "resource": "https://api.meetup.com/oembed",
+        "method": "get",
+        "test": {
+            "params": {
+                "url": "http://www.meetup.com/banodejs/events/221235192/"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["type", "html"]
+            }
+        }
+    },
+    "postPhoto": {
+        "resource": "https://api.meetup.com/2/photo",
+        "method": "post",
+        "multipart_photo": true
+    },
+    "deletePhoto": {
+        "resource": "https://api.meetup.com/2/photo/:id",
+        "method": "delete"
+    },
+    "getPhotoComments": {
+        "resource": "https://api.meetup.com/2/photo_comments",
+        "method": "get",
+        "test": {
+            "params": {
+                "photo_id": "12208722"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "postPhotoComment": {
+        "resource": "https://api.meetup.com/2/photo_comment",
+        "method": "post"
+    },
+    "getPhotoAlbums": {
+        "resource": "https://api.meetup.com/2/photo_albums",
+        "method": "get",
+        "test": {
+            "params": {
+                "group_id": "4603552"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "postPhotoAlbum": {
+        "resource": "https://api.meetup.com/2/photo_album",
+        "method": "post"
+    },
+    "getProfiles": {
+        "resource": "https://api.meetup.com/2/profiles",
+        "method": "get",
+        "test": {
+            "params": {
+                "group_id": "18405217"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getProfile": {
+        "resource": "https://api.meetup.com/2/profile/:gid/:mid",
+        "method": "get",
+        "test": {
+            "params": {
+                "gid": "18405217",
+                "mid": "46861012"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["profile_url", "member_id"]
+            }
+        }
+    },
+    "postProfiles": {
+        "resource": "https://api.meetup.com/2/profiles",
+        "method": "post"
+    },
+    "postProfile": {
+        "resource": "https://api.meetup.com/2/profile",
+        "method": "post"
+    },
+    "editProfile": {
+        "resource": "https://api.meetup.com/2/profile/:gid/:mid",
+        "method": "post"
+    },
+    "deleteProfile": {
+        "resource": "https://api.meetup.com/2/profile/:gid/:mid",
+        "method": "delete"
+    },
+    "membershipApproval": {
+        "resource": "https://api.meetup.com/:urlname/member/approvals",
+        "method": "post"
+    },
+    "membershipDecline": {
+        "resource": "https://api.meetup.com/:urlname/member/approvals",
+        "method": "delete"
+    },
+    "postRSVP": {
+        "resource": "https://api.meetup.com/2/rsvp",
+        "method": "post"
+    },
+    "getRSVPs": {
+        "resource": "https://api.meetup.com/2/rsvps",
+        "method": "get",
+        "test": {
+            "params": {
+                "event_id": "221235192"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getRSVP": {
+        "resource": "https://api.meetup.com/2/rsvp/:id",
+        "method": "get",
+        "test": {
+            "params": {
+                "id": "1541748484"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["response", "rsvp_id"]
+            }
+        }
+    },
+    "getOpenVenues": {
+        "resource": "https://api.meetup.com/2/open_venues",
+        "method": "get",
+        "test": {
+            "params": {
+                "group_urlname": "banodejs"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getVenues": {
+        "resource": "https://api.meetup.com/2/venues",
+        "method": "get",
+        "test": {
+            "params": {
+                "group_urlname": "banodejs"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "getRecommendedVenues": {
+        "resource": "https://api.meetup.com/recommended/venues",
+        "method": "get",
+        "test": {
+            "params": {
+                "group_urlname": "banodejs"
+            },
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "getTopics": {
+        "resource": "https://api.meetup.com/topics",
+        "method": "get",
+        "test": {
+            "params": {},
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "findTopics": {
+        "resource": "https://api.meetup.com/find/topics",
+        "method": "get",
+        "test": {
+            "params": {
+                "query": "javascript"
+            },
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "getTopicCategories": {
+        "resource": "https://api.meetup.com/2/topic_categories",
+        "method": "get",
+        "test": {
+            "params": {},
+            "return": {
+                "type": "object",
+                "keys": ["results", "meta"]
+            }
+        }
+    },
+    "findTopicCategories": {
+        "resource": "https://api.meetup.com/find/topic_categories",
+        "method": "get",
+        "test": {
+            "params": {},
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "getRecommendedGroupTopics": {
+        "resource": "https://api.meetup.com/recommended/group_topics",
+        "method": "get",
+        "test": {
+            "params": {
+                "text": "javascript"
+            },
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "dashboard": {
+        "resource": "https://api.meetup.com/dashboard",
+        "method": "get",
+        "test": {
+            "params": {
+                "fields": "stats"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["stats"]
+            }
+        }
+    },
+    "getNotifications": {
+        "resource": "https://api.meetup.com/notifications",
+        "method": "get",
+        "test": {
+            "params": {},
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "setNotificationsRead": {
+        "resource": "https://api.meetup.com/notifications/read",
+        "method": "post"
+    },
+    "getStreamRSVPs": {
+        "resource": "wss://stream.meetup.com/2/rsvps",
+        "method": "get",
+        "test": {
+            "params": {
+                "since_mtime": "1294435118533"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["response", "member"]
+            }
+        }
+    },
+    "getStreamOpenEvents": {
+        "resource": "https://stream.meetup.com/2/open_events",
+        "method": "get",
+        "chunked": true,
+        "test": {
+            "params": {
+                "since_mtime": "1294435118533"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["event_url", "id"]
+            }
+        }
+    },
+    "getStreamPhotos": {
+        "resource": "wss://stream.meetup.com/2/photos",
+        "method": "get",
+        "test": {
+            "params": {
+                "since_mtime": "1294435118533"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["photo_id", "photo_link"]
+            }
+        }
+    },
+    "getStreamEventComments": {
+        "resource": "wss://stream.meetup.com/2/event_comments",
+        "method": "get",
+        "test": {
+            "params": {
+                "since_mtime": "1294435118533"
+            },
+            "return": {
+                "type": "object",
+                "keys": ["id", "member"]
+            }
+        }
+    },
+    "getLocations": {
+        "resource": "https://api.meetup.com/find/locations",
+        "method": "get",
+        "test": {
+            "params": {
+                "lon": "-58.381592",
+                "lat": "-34.603722"
+            },
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "getSelfEvents": {
+        "resource": "https://api.meetup.com/self/events",
+        "method": "get",
+        "test": {
+            "params": {},
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "getSelfCalendar": {
+        "resource": "https://api.meetup.com/self/calendar",
+        "method": "get",
+        "test": {
+            "params": {},
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "getSelfGroups": {
+        "resource": "https://api.meetup.com/self/groups",
+        "method": "get",
+        "test": {
+            "params": {},
+            "return": {
+                "type": "array"
+            }
+        }
     }
-  },
-  "getBoards": {
-    "resource": "https://api.meetup.com/:urlname/boards",
-    "method": "get",
-    "test": {
-      "params": {
-        "urlname": "banodejs"
-      },
-      "return": {
-        "type": "array"
-      }
-    }
-  },
-  "getDiscussions": {
-    "resource": "https://api.meetup.com/:urlname/boards/:bid/discussions",
-    "method": "get"
-  },
-  "getDiscussion": {
-    "resource": "https://api.meetup.com/:urlname/boards/:bid/discussions/:did",
-    "method": "get"
-  },
-  "getCategories": {
-    "resource": "https://api.meetup.com/2/categories",
-    "method": "get",
-    "test": {
-      "params": {
-        "page": "20"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "postCheckin": {
-    "resource": "https://api.meetup.com/2/checkin",
-    "method": "post"
-  },
-  "getCities": {
-    "resource": "https://api.meetup.com/2/cities",
-    "method": "get",
-    "test": {
-      "params": {
-        "page": "20"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getOpenEvents": {
-    "resource": "https://api.meetup.com/2/open_events",
-    "method": "get",
-    "test": {
-      "params": {
-        "topic": "javascript"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getConcierge": {
-    "resource": "https://api.meetup.com/2/concierge",
-    "method": "get",
-    "test": {
-      "params": {
-        "country": "argentina"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getEvents": {
-    "resource": "https://api.meetup.com/2/events",
-    "method": "get",
-    "test": {
-      "params": {
-        "group_urlname": "banodejs"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getEvent": {
-    "resource": "https://api.meetup.com/:urlname/events/:id",
-    "method": "get",
-    "test": {
-      "params": {
-        "urlname": "banodejs",
-        "id": "221235192"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["status", "venue", "id", "group"]
-      }
-    }
-  },
-  "postEvent": {
-    "resource": "https://api.meetup.com/2/event",
-    "method": "post"
-  },
-  "editEvent": {
-    "resource": "https://api.meetup.com/2/event/:id",
-    "method": "post"
-  },
-  "deleteEvent": {
-    "resource": "https://api.meetup.com/2/event/:id",
-    "method": "delete"
-  },
-  "getEventComments": {
-    "resource": "https://api.meetup.com/2/event_comments",
-    "method": "get",
-    "test": {
-      "params": {
-        "group_id": "18405217"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getEventComment": {
-    "resource": "https://api.meetup.com/2/event_comment/:id",
-    "method": "get",
-    "test": {
-      "params": {
-        "id": "469881308"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["comment", "event_id"]
-      }
-    }
-  },
-  "postEventComment": {
-    "resource": "https://api.meetup.com/2/event_comment",
-    "method": "post"
-  },
-  "deleteEventComment": {
-    "resource": "https://api.meetup.com/2/event_comment/:id",
-    "method": "delete"
-  },
-  "postEventCommentSubscribe": {
-    "resource": "https://api.meetup.com/2/event_comment_subscribe/:id",
-    "method": "post"
-  },
-  "deleteEventCommentSubscribe": {
-    "resource": "https://api.meetup.com/2/event_comment_subscribe/:id",
-    "method": "delete"
-  },
-  "postEventCommentFlag": {
-    "resource": "https://api.meetup.com/2/event_comment_flag",
-    "method": "post"
-  },
-  "getEventCommentLikes": {
-    "resource": "https://api.meetup.com/2/event_comment_likes",
-    "method": "get",
-    "test": {
-      "params": {
-        "comment_id": "113951632"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "postEventCommentLike": {
-    "resource": "https://api.meetup.com/2/event_comment_like/:id",
-    "method": "post"
-  },
-  "deleteEventCommentLike": {
-    "resource": "https://api.meetup.com/2/event_comment_like/:id",
-    "method": "delete"
-  },
-  "postEventsWatchlist": {
-    "resource": "https://api.meetup.com/:urlname/events/:id/watchlist",
-    "method": "post"
-  },
-  "deleteEventsWatchlist": {
-    "resource": "https://api.meetup.com/:urlname/events/:id/watchlist",
-    "method": "delete"
-  },
-  "getEventRatings": {
-    "resource": "https://api.meetup.com/2/event_ratings",
-    "method": "get",
-    "test": {
-      "params": {
-        "event_id": "221235192"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "postEventRating": {
-    "resource": "https://api.meetup.com/2/event_rating",
-    "method": "post"
-  },
-  "getEventAttendance": {
-    "resource": "https://api.meetup.com/:urlname/events/:id/attendance",
-    "method": "get"
-  },
-  "takeEventAttendance": {
-    "resource": "https://api.meetup.com/:urlname/events/:id/attendance",
-    "method": "post"
-  },
-  "postEventPayments": {
-    "resource": "https://api.meetup.com/:urlname/events/:id/payments",
-    "method": "post"
-  },
-  "getActivity": {
-    "resource": "https://api.meetup.com/activity",
-    "method": "get",
-    "test": {
-      "params": {
-        "page_start": "0"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getGroups": {
-    "resource": "https://api.meetup.com/2/groups",
-    "method": "get",
-    "test": {
-      "params": {
-        "group_id": "4603552"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getPROGroups": {
-    "resource": "https://api.meetup.com/pro/:urlname/groups",
-    "method": "get"
-  },
-  "getGroup": {
-    "resource": "https://api.meetup.com/:urlname",
-    "method": "get",
-    "test": {
-      "params": {
-        "urlname": "banodejs"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["urlname", "id"]
-      }
-    }
-  },
-  "editGroup": {
-    "resource": "https://api.meetup.com/:urlname",
-    "method": "post"
-  },
-  "postGroupPhoto": {
-    "resource": "https://api.meetup.com/2/group_photo",
-    "method": "post",
-    "multipart_photo": true
-  },
-  "findGroups": {
-    "resource": "https://api.meetup.com/find/groups",
-    "method": "get",
-    "test": {
-      "params": {
-        "page": 1
-      },
-      "return": {
-        "type": "array"
-      }
-    }
-  },
-  "getRecommendedGroups": {
-    "resource": "https://api.meetup.com/recommended/groups",
-    "method": "get",
-    "test": {
-      "params": {
-        "urlname": "banodejs"
-      },
-      "return": {
-        "type": "array"
-      }
-    }
-  },
-  "postRecommendedGroupsIgnore": {
-    "resource": " /recommended/groups/ignores/:urlname",
-    "method": "post"
-  },
-  "postTopics": {
-    "resource": "/:urlname/topics",
-    "method": "post"
-  },
-  "deleteTopics": {
-    "resource": "/:urlname/topics",
-    "method": "delete"
-  },
-  "getSimilarGroups": {
-    "resource": "https://api.meetup.com/:urlname/similar_groups",
-    "method": "get",
-    "test": {
-      "params": {
-        "urlname": "banodejs"
-      },
-      "return": {
-        "type": "array"
-      }
-    }
-  },
-  "getComments": {
-    "resource": "https://api.meetup.com/comments",
-    "method": "get",
-    "test": {
-      "params": {
-        "group_id": "4603552"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getMembers": {
-    "resource": "https://api.meetup.com/2/members",
-    "method": "get",
-    "test": {
-      "params": {
-        "group_id": "4603552"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getPROMembers": {
-    "resource": "https://api.meetup.com/pro/:urlname/members",
-    "method": "get"
-  },
-  "getMember": {
-    "resource": "https://api.meetup.com/2/member/:id",
-    "method": "get",
-    "test": {
-      "params": {
-        "id": "46861012"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["id", "name"]
-      }
-    }
-  },
-  "editMember": {
-    "resource": "https://api.meetup.com/2/member/:id",
-    "method": "post"
-  },
-  "postMemberPhoto": {
-    "resource": "https://api.meetup.com/2/member_photo",
-    "method": "post",
-    "multipart_photo": true
-  },
-  "deleteMemberPhoto": {
-    "resource": "https://api.meetup.com/2/member_photo/:id",
-    "method": "delete"
-  },
-  "getOEMBed": {
-    "resource": "https://api.meetup.com/oembed",
-    "method": "get"
-  },
-  "postPhoto": {
-    "resource": "https://api.meetup.com/2/photo",
-    "method": "post",
-    "multipart_photo": true
-  },
-  "deletePhoto": {
-    "resource": "https://api.meetup.com/2/photo/:id",
-    "method": "delete"
-  },
-  "getPhotoComments": {
-    "resource": "https://api.meetup.com/2/photo_comments",
-    "method": "get",
-    "test": {
-      "params": {
-        "photo_id": "12208722"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "postPhotoComment": {
-    "resource": "https://api.meetup.com/2/photo_comment",
-    "method": "post"
-  },
-  "getPhotoAlbums": {
-    "resource": "https://api.meetup.com/2/photo_albums",
-    "method": "get",
-    "test": {
-      "params": {
-        "group_id": "4603552"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "postPhotoAlbum": {
-    "resource": "https://api.meetup.com/2/photo_album",
-    "method": "post"
-  },
-  "getProfiles": {
-    "resource": "https://api.meetup.com/2/profiles",
-    "method": "get",
-    "test": {
-      "params": {
-        "group_id": "18405217"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getProfile": {
-    "resource": "https://api.meetup.com/2/profile/:gid/:mid",
-    "method": "get",
-    "test": {
-      "params": {
-        "gid": "18405217",
-        "mid": "46861012"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["profile_url", "member_id"]
-      }
-    }
-  },
-  "postProfiles": {
-    "resource": "https://api.meetup.com/2/profiles",
-    "method": "post"
-  },
-  "postProfile": {
-    "resource": "https://api.meetup.com/2/profile",
-    "method": "post"
-  },
-  "editProfile": {
-    "resource": "https://api.meetup.com/2/profile/:gid/:mid",
-    "method": "post"
-  },
-  "deleteProfile": {
-    "resource": "https://api.meetup.com/2/profile/:gid/:mid",
-    "method": "delete"
-  },
-  "membershipApproval": {
-    "resource": "https://api.meetup.com/:urlname/member/approvals",
-    "method": "post"
-  },
-  "membershipDecline": {
-    "resource": "https://api.meetup.com/:urlname/member/approvals",
-    "method": "delete"
-  },
-  "postRSVP": {
-    "resource": "https://api.meetup.com/2/rsvp",
-    "method": "post"
-  },
-  "getRSVPs": {
-    "resource": "https://api.meetup.com/2/rsvps",
-    "method": "get",
-    "test": {
-      "params": {
-        "event_id": "221235192"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getRSVP": {
-    "resource": "https://api.meetup.com/2/rsvp/:id",
-    "method": "get",
-    "test": {
-      "params": {
-        "id": "1541748484"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["response", "rsvp_id"]
-      }
-    }
-  },
-  "getOpenVenues": {
-    "resource": "https://api.meetup.com/2/open_venues",
-    "method": "get",
-    "test": {
-      "params": {
-        "group_urlname": "banodejs"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getVenues": {
-    "resource": "https://api.meetup.com/2/venues",
-    "method": "get",
-    "test": {
-      "params": {
-        "group_urlname": "banodejs"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "getRecommendedVenues": {
-    "resource": "https://api.meetup.com/recommended/venues",
-    "method": "get",
-    "test": {
-      "params": {
-        "group_urlname": "banodejs"
-      },
-      "return": {
-        "type": "array"
-      }
-    }
-  },
-  "getTopics": {
-    "resource": "https://api.meetup.com/topics",
-    "method": "get",
-    "test": {
-      "params": {},
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "findTopics": {
-    "resource": "https://api.meetup.com/find/topics",
-    "method": "get",
-    "test": {
-      "params": {
-        "query": "javascript"
-      },
-      "return": {
-        "type": "array"
-      }
-    }
-  },
-  "getTopicCategories": {
-    "resource": "https://api.meetup.com/2/topic_categories",
-    "method": "get",
-    "test": {
-      "params": {},
-      "return": {
-        "type": "object",
-        "keys": ["results", "meta"]
-      }
-    }
-  },
-  "findTopicCategories": {
-    "resource": "https://api.meetup.com/find/topic_categories",
-    "method": "get",
-    "test": {
-      "params": {},
-      "return": {
-        "type": "array"
-      }
-    }
-  },
-  "getRecommendedGroupTopics": {
-    "resource": "https://api.meetup.com/recommended/group_topics",
-    "method": "get",
-    "test": {
-      "params": {
-        "text": "javascript"
-      },
-      "return": {
-        "type": "array"
-      }
-    }
-  },
-  "dashboard": {
-    "resource": "https://api.meetup.com/dashboard",
-    "method": "get",
-    "test": {
-      "params": {
-        "fields": "stats"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["stats"]
-      }
-    }
-  },
-  "getNotifications": {
-    "resource": "https://api.meetup.com/notifications",
-    "method": "get",
-    "test": {
-      "params": {},
-      "return": {
-        "type": "array"
-      }
-    }
-  },
-  "setNotificationsRead": {
-    "resource": "https://api.meetup.com/notifications/read",
-    "method": "post"
-  },
-  "getStreamRSVPs": {
-    "resource": "wss://stream.meetup.com/2/rsvps",
-    "method": "get",
-    "test": {
-      "params": {
-        "since_mtime": "1294435118533"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["response", "member"]
-      }
-    }
-  },
-  "getStreamOpenEvents": {
-    "resource": "https://stream.meetup.com/2/open_events",
-    "method": "get",
-    "chunked": true,
-    "test": {
-      "params": {
-        "since_mtime": "1294435118533"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["event_url", "id"]
-      }
-    }
-  },
-  "getStreamPhotos": {
-    "resource": "wss://stream.meetup.com/2/photos",
-    "method": "get",
-    "test": {
-      "params": {
-        "since_mtime": "1294435118533"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["photo_id", "photo_link"]
-      }
-    }
-  },
-  "getStreamEventComments": {
-    "resource": "wss://stream.meetup.com/2/event_comments",
-    "method": "get",
-    "test": {
-      "params": {
-        "since_mtime": "1294435118533"
-      },
-      "return": {
-        "type": "object",
-        "keys": ["id", "member"]
-      }
-    }
-  },
-  "getLocations": {
-    "resource": "https://api.meetup.com/find/locations",
-    "method": "get",
-    "test": {
-      "params": {
-        "lon": "-58.381592",
-        "lat": "-34.603722"
-      },
-      "return": {
-        "type": "array"
-      }
-    }
-  },
-  "getSelfEvents": {
-    "resource": "https://api.meetup.com/self/events",
-    "method": "get",
-    "test": {
-      "params": {},
-      "return": {
-        "type": "array"
-      }
-    }
-  },
-  "getSelfCalendar": {
-    "resource": "https://api.meetup.com/self/calendar",
-    "method": "get",
-    "test": {
-      "params": {},
-      "return": {
-        "type": "array"
-      }
-    }
-  },
-  "getSelfGroups": {
-    "resource": "https://api.meetup.com/self/groups",
-    "method": "get",
-    "test": {
-      "params": {},
-      "return": {
-        "type": "array"
-      }
-    }
-  }
 }
