@@ -24,7 +24,7 @@
     "JSONStream": "1.3.x",
     "event-stream": "3.3.x",
     "superagent": "3.5.x",
-    "websocket-stream": "3.3.x"
+    "websocket-stream": "4.0.x"
   },
   "optionalDependencies": {
     "oauth": "0.9.x",
