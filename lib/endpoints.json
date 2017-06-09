@@ -73,6 +73,18 @@
             }
         }
     },
+    "findEvents": {
+        "resource": "https://api.meetup.com/find/events",
+        "method": "get",
+        "test": {
+            "params": {
+                "text": "javascript"
+            },
+            "return": {
+                "type": "array"
+            }
+        }
+    },
     "getConcierge": {
         "resource": "https://api.meetup.com/2/concierge",
         "method": "get",
@@ -548,6 +560,18 @@
             }
         }
     },
+    "findVenues": {
+        "resource": "https://api.meetup.com/find/venues",
+        "method": "get",
+        "test": {
+            "params": {
+                "text": "Buenos Aires"
+            },
+            "return": {
+                "type": "array"
+            }
+        }
+    },
     "getRecommendedVenues": {
         "resource": "https://api.meetup.com/recommended/venues",
         "method": "get",
@@ -696,7 +720,7 @@
             }
         }
     },
-    "getLocations": {
+    "findLocations": {
         "resource": "https://api.meetup.com/find/locations",
         "method": "get",
         "test": {
@@ -734,6 +758,19 @@
         "method": "get",
         "test": {
             "params": {},
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "getHosts": {
+        "resource": "https://api.meetup.com/:urlname/events/:event_id/hosts",
+        "method": "get",
+        "test": {
+            "params": {
+            	"event_id": "239365282",
+            	"urlname": "banodejs"
+            },
             "return": {
                 "type": "array"
             }
