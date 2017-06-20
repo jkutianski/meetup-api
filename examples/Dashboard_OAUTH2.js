@@ -22,8 +22,8 @@ var server = http.createServer(function(request, response) {
         meetup.getOAuth2AccessToken(oauth_token, function(error) {
             if (error) {
                 console.warn(error);
-                if(error.statusCode === 400) {
-                    console.info('INFO: This error is because no HTTPS!')
+                if (error.statusCode === 400) {
+                    console.info('INFO: This error is because no HTTPS!');
                 }
             }
 
