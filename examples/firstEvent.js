@@ -7,8 +7,8 @@ var meetup = require('../lib/meetup')({
 });
 
 meetup.getEvent({
-    'urlname': 'NodeJS-Argentina',
-    'id': '79797122'
+    'urlname': 'banodejs',
+    'id': '221235192'
 }, function(error, event) {
     if (error) {
         console.log(error);

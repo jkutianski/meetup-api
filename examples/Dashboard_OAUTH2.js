@@ -20,29 +20,26 @@ var server = http.createServer(function(request, response) {
     oauth_token = oauth_token || uri.query.access_token || uri.query.code;
     if (oauth_token) {
         meetup.getOAuth2AccessToken(oauth_token, function(error) {
-        	if (error) {
+            if (error) {
                 console.warn(error);
-            }
-            // meetup.refreshOAuth2AccessToken(null, function(error) {
-            	if (error) {
-                    console.warn(error);
+                if (error.statusCode === 400) {
+                    console.info('INFO: This error is because no HTTPS!');
                 }
-                meetup.getGroup({
-                    'urlname': 'NodeJS-Argentina'
-                }, function(err, obj) {
-                    if (err) {
-                        response.writeHead(200, {
-                            'Content-Type': 'application/json'
-                        });
-                        response.end(JSON.stringify(err));
-                    } else {
-                        response.writeHead(200, {
-                            'Content-Type': 'application/json'
-                        });
-                        response.end(JSON.stringify(obj));
-                    }
-                });
-            // });
+            }
+
+            meetup.dashboard({}, function(err, obj) {
+                if (err) {
+                    response.writeHead(200, {
+                        'Content-Type': 'application/json'
+                    });
+                    response.end(JSON.stringify(err));
+                } else {
+                    response.writeHead(200, {
+                        'Content-Type': 'application/json'
+                    });
+                    response.end(JSON.stringify(obj));
+                }
+            });
         });
     } else {
         meetup.getOAuth2RequestToken({
@@ -55,7 +52,7 @@ var server = http.createServer(function(request, response) {
                 response.end();
             } else {
                 response.writeHead(500, {
-                        'Content-Type': 'application/json'
+                    'Content-Type': 'application/json'
                 });
                 response.end(JSON.stringify(error));
             }
