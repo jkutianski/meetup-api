@@ -7,7 +7,7 @@ var meetup = require('../lib/meetup')({
 });
 
 meetup.getGroup({
-    urlname: 'NodeJS-Argentina'
+    urlname: 'banodejs'
 }, function(err, resp) {
     if (err) {
         console.error('Found meetup error', err);
