@@ -208,6 +208,19 @@
         "resource": "https://api.meetup.com/:urlname/events/:id/watchlist",
         "method": "post"
     },
+    "getEventPhotos": {
+        "resource": "https://api.meetup.com/:urlname/events/:id/photos",
+        "method": "get",
+        "test": {
+            "params": {
+                "urlname": "ReactStuttgart",
+                "id": "233941914"
+            },
+            "return": {
+                "type": "array"
+            }
+        }
+    },
     "deleteEventsWatchlist": {
         "resource": "https://api.meetup.com/:urlname/events/:id/watchlist",
         "method": "delete"
@@ -768,8 +781,8 @@
         "method": "get",
         "test": {
             "params": {
-            	"event_id": "239365282",
-            	"urlname": "banodejs"
+                "event_id": "239365282",
+                "urlname": "banodejs"
             },
             "return": {
                 "type": "array"
