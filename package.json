@@ -1,7 +1,7 @@
 {
   "name": "meetup-api",
   "description": "Meetup API library",
-  "version": "1.4.21",
+  "version": "1.4.22",
   "license": "GPL-3.0",
   "directories": {
     "lib": "./lib",
@@ -28,7 +28,7 @@
   },
   "optionalDependencies": {
     "oauth": "0.9.x",
-    "proxy-agent": "2.0.x",
+    "proxy-agent": "2.1.x",
     "superagent-oauth": "0.2.x"
   },
   "devDependencies": {
