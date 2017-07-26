@@ -1,8 +1,8 @@
 var meetup = require('../lib/meetup')();
 
-// meetup.proxy = 'http://localhost:3128';
+// meetup.proxy = 'http://149.202.94.120:3128';
 
-console.log('Use proxy:', meetup.proxy); // ISSUE: on HTTP(S) GET/POST/PUT/DELETE returns 404
+console.log('Use proxy:', meetup.proxy);
 
 meetup.getCities({
 	lat: -34.603722,
