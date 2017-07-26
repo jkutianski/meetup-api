@@ -1,5 +1,7 @@
 var _meetup = require('meetup-api')();
 
+// _meetup.proxy = 'http://149.202.94.120:3128';
+
 _meetup.findLocations({
 	query: 'Córdoba'
 }, function (err, results) {
