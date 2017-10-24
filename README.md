@@ -17,7 +17,7 @@ For Node.js < v4.0.0, please use [this branch][v0.1.x]
 [![devDependency Status][devdepstat-imag]][devdepstat-url]
 [![optionalDependency Status][optdepstat-imag]][optdepstat-url]
 
-meetup-api is an [Meetup.com][meetup-url] API library written in [JavaScript][javascrip-wikipedia] for [Node.js][nodejs-url].
+meetup-api is an [Meetup.com][meetup-url] API library written in [JavaScript][javascrip-wikipedia] for [Node.js V8][nodejs-url] and [Node.js ChakraCore][nodechakra-url]
 
 You can access more detailed documentation about the API at [Meetup API Docs site][meetup-api-docs-url] and [meetup-api Wiki pages][wiki-url]
 
@@ -52,6 +52,7 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [meetup-api-docs-url]: http://www.meetup.com/meetup_api/docs/
 [javascrip-wikipedia]: http://en.wikipedia.org/wiki/JavaScript
 [nodejs-url]: http://nodejs.org/
+[nodechakra-url]: https://github.com/nodejs/node-chakracore
 [apps-usingthis]: https://github.com/jkutianski/meetup-api/wiki/Applications-using-this-library
 [runkit-url]: https://npm.runkit.com/meetup-api
 [runkit-image]: https://badge.runkitcdn.com/meetup-api.svg
