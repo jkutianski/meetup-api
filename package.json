@@ -2,11 +2,6 @@
   "name": "meetup-api",
   "description": "Meetup API library",
   "version": "1.4.25",
-  "license": "GPL-3.0",
-  "directories": {
-    "lib": "./lib",
-    "example": "./examples"
-  },
   "keywords": [
     "meetup",
     "api"
@@ -15,6 +10,18 @@
   "author": "Juan Pablo Kutianski <jkutianski@gmail.com>",
   "bugs": {
     "url": "http://github.com/jkutianski/meetup-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jkutianski/meetup-api.git"
+  },
+  "licenses": [ {
+    "type": "GPL-3.0",
+    "url": "https://opensource.org/licenses/GPL-3.0" 
+  } ],
+  "directories": {
+    "lib": "./lib",
+    "example": "./examples"
   },
   "engine-strict": true,
   "engines": {
@@ -33,10 +40,6 @@
   },
   "devDependencies": {
     "forallasync": "1.0.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/jkutianski/meetup-api.git"
   },
   "scripts": {
     "test": "node ./test/testEndpoints.js"
