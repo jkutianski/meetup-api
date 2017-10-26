@@ -28,7 +28,7 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [![Package Quality][packagequality-img]][packagequality-url]
 
 [v0.1.x]: https://github.com/jkutianski/meetup-api/tree/0.1.X
-[license-image]: http://img.shields.io/npm/l/meetup-api.svg?style=flat
+[license-image]: https://img.shields.io/github/license/jkutianski/meetup-api.svg?style=flat
 [license-url]: https://github.com/jkutianski/meetup-api/blob/master/LICENSE
 [depstat-url]: https://david-dm.org/jkutianski/meetup-api
 [depstat-image]: https://david-dm.org/jkutianski/meetup-api.svg
