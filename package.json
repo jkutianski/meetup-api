@@ -1,13 +1,17 @@
 {
   "name": "meetup-api",
   "description": "Meetup API library",
-  "version": "1.4.25",
+  "version": "1.4.26",
   "keywords": [
     "meetup",
     "api"
   ],
   "main": "index.js",
-  "author": "Juan Pablo Kutianski <jkutianski@gmail.com>",
+  "author": {
+    "name": "Juan Pablo Kutianski",
+    "email": "jkutianski@gmail.com",
+    "url": "https://github.com/jkutianski"
+  },
   "bugs": {
     "url": "http://github.com/jkutianski/meetup-api/issues"
   },

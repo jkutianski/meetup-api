@@ -1,4 +1,18 @@
-scripts
-node_modules
-docs
-wiki
+README.md
+Makefile
+docs/
+examples/
+test/
+wiki/
+
+# Mac OS X
+.DS_Store
+
+# Node.js
+.npmignore
+.npmrc
+node_modules/
+npm-debug.log
+
+# Git
+.git*

@@ -1,19 +1,8 @@
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
+# Mac OS X
+.DS_Store
 
-keys.bat
-
-pids
-logs
-results
-
-node_modules
+# Node.js
+.npmrc
+node_modules/
 npm-debug.log
-/docs/
-/package-lock.json
+package-lock.json
