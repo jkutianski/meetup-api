@@ -534,6 +534,23 @@
             }
         }
     },
+    "getEventRSVPs": {
+        "resource": "https://api.meetup.com/:urlname/events/:event_id/rsvps",
+        "method": "get",
+        "test": {
+            "params": {
+                "urlname": "banodejs",
+                "event_id": "239365282"
+            },
+            "return": {
+                "type": "array"
+            }
+        }
+    },
+    "postEventRSVPs": {
+        "resource": "https://api.meetup.com/:urlname/events/:event_id/rsvps",
+        "method": "post"
+    },
     "getRSVP": {
         "resource": "https://api.meetup.com/2/rsvp/:id",
         "method": "get",
