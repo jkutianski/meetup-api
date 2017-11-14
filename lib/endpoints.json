@@ -397,6 +397,18 @@
             }
         }
     },
+    "getMemberProfiles": {
+         "resource": "https://api.meetup.com/:urlname/members",
+         "method": "get",
+         "test": {
+             "params": {
+                 "urlname": "banodejs"
+             },
+             "return": {
+                 "type": "array"
+             }
+         }
+     },
     "editMember": {
         "resource": "https://api.meetup.com/2/member/:id",
         "method": "post"
