@@ -73,15 +73,14 @@
             }
         }
     },
-    "findEvents": {
-        "resource": "https://api.meetup.com/find/events",
+    "getUpcomingEvents": {
+        "resource": "https://api.meetup.com/find/upcoming_events",
         "method": "get",
         "test": {
-            "params": {
-                "text": "javascript"
-            },
+            "params": {},
             "return": {
-                "type": "array"
+                "type": "object",
+                "keys": ["city", "events"]
             }
         }
     },
