@@ -1,6 +1,6 @@
 var meetup = require('../lib/meetup')();
 
-// meetup.proxy = 'http://149.202.94.120:3128';
+meetup.proxy = 'http://54.255.251.162:8080';
 
 console.log('Use proxy:', meetup.proxy);
 
