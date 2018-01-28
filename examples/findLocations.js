@@ -7,7 +7,7 @@ var meetup = require('../lib/meetup')({
 	key: key
 });
 
-meetup.getLocations({'query': 'córdoba'}, function(err, arr) {
+meetup.findLocations({'query': 'córdoba'}, function(err, arr) {
 	arr.forEach(function(loc) {
 		console.log('Found', loc.name_string);
 	});	
