@@ -42,8 +42,8 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [gitter-url]: https://gitter.im/jkutianski/meetup-api
 [stackoverflow-image]: https://img.shields.io/badge/stackoverflow-meetup--api-yellowgreen.svg
 [stackoverflow-url]: http://stackoverflow.com/search?q=nodejs-meetup-api
-[codacy-image]: https://www.codacy.com/project/badge/cbe5350e1cc64a35ac73495272dd148e
-[codacy-url]: https://www.codacy.com/public/jkutianski/meetup-api
+[codacy-image]: https://api.codacy.com/project/badge/Grade/cbe5350e1cc64a35ac73495272dd148e
+[codacy-url]: https://www.codacy.com/app/jkutianski/meetup-api
 [packagequality-img]: http://npm.packagequality.com/badge/meetup-api.png
 [packagequality-url]: http://packagequality.com/#?package=meetup-api
 [todo-list]: https://github.com/jkutianski/meetup-api/wiki/Todo
