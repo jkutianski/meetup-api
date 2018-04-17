@@ -1,7 +1,7 @@
 {
   "name": "meetup-api",
   "description": "Meetup API library",
-  "version": "1.4.31",
+  "version": "1.4.32",
   "keywords": [
     "meetup",
     "api"
@@ -36,7 +36,7 @@
   },
   "optionalDependencies": {
     "oauth": "0.9.x",
-    "proxy-agent": "2.2.x",
+    "proxy-agent": "3.0.x",
     "superagent-oauth": "0.2.x"
   },
   "devDependencies": {
