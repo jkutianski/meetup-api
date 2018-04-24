@@ -36,7 +36,7 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [devdepstat-imag]: https://david-dm.org/jkutianski/meetup-api/dev-status.svg
 [optdepstat-url]: https://david-dm.org/jkutianski/meetup-api#info=optionalDependencies
 [optdepstat-imag]: https://david-dm.org/jkutianski/meetup-api/optional-status.svg?style=flat
-[codeship-image]: http://img.shields.io/codeship/c9589b70-044a-0134-8288-66ea79cc2349/1.X.X.svg?style=flat
+[codeship-image]: https://app.codeship.com/projects/c9589b70-044a-0134-8288-66ea79cc2349/status?branch=master
 [codeship-url]: https://codeship.com/projects/154113
 [gitter-image]: https://img.shields.io/badge/gitter-join%20chat-yellowgreen.svg
 [gitter-url]: https://gitter.im/jkutianski/meetup-api
