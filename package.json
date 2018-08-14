@@ -34,7 +34,8 @@
     "superagent": "3.8.x",
     "superagent-throttle": "^0.2.5",
     "websocket-stream": "5.1.x",
-    "ws": "3.3.x"
+    "ws": "3.3.x",
+    "snyk": "^1.90.2"
   },
   "optionalDependencies": {
     "oauth": "0.9.x",
@@ -45,7 +46,10 @@
     "forallasync": "1.0.x"
   },
   "scripts": {
-    "test": "node ./test/testEndpoints.js"
+    "test": "node ./test/testEndpoints.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
-  "tonicExampleFilename": "tonicExample.js"
+  "tonicExampleFilename": "tonicExample.js",
+  "snyk": true
 }
