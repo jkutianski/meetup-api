@@ -33,7 +33,7 @@
     "event-stream": "3.3.4",
     "mime": "2.4.x",
     "superagent": "4.0.x",
-    "superagent-throttle": "^0.2.5",
+    "superagent-throttle": "^1.0.0",
     "websocket-stream": "^5.1.2",
     "ws": "6.1.x"
   },
