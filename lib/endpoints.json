@@ -125,12 +125,12 @@
         }
     },
     "postEvent": {
-        "resource": "https://api.meetup.com/2/event",
+        "resource": "https://api.meetup.com/:group_urlname/events",
         "method": "post"
     },
     "editEvent": {
-        "resource": "https://api.meetup.com/2/event/:id",
-        "method": "post"
+        "resource": "https://api.meetup.com/:group_urlname/events/:id",
+        "method": "patch"
     },
     "deleteEvent": {
         "resource": "https://api.meetup.com/2/event/:id",
