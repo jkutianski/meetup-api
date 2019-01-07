@@ -133,7 +133,7 @@
         "method": "patch"
     },
     "deleteEvent": {
-        "resource": "https://api.meetup.com/2/event/:id",
+        "resource": "https://api.meetup.com/:group_urlname/events/:id",
         "method": "delete"
     },
     "getEventComments": {
