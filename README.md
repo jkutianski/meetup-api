@@ -9,6 +9,7 @@ For Node.js < v4.0.0, please use [this branch][v0.1.x]
 [![Codeship Status][codeship-image]][codeship-url]
 [![Codacy][codacy-image]][codacy-url]
 [![Runkit][runkit-image]][runkit-url]
+[![Snyk][snyk-image]][snyk-url]
 
 [![Stackoverflow Thread][stackoverflow-image]][stackoverflow-url]
 [![Gitter chat][gitter-image]][gitter-url]
@@ -56,4 +57,7 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [apps-usingthis]: https://github.com/jkutianski/meetup-api/wiki/Applications-using-this-library
 [runkit-url]: https://npm.runkit.com/meetup-api
 [runkit-image]: https://badge.runkitcdn.com/meetup-api.svg
+[snyk-url]: https://snyk.io/test/github/jkutianski/meetup-api
+[snyk-image]: https://snyk.io/test/github/jkutianski/meetup-api/badge.svg
+
 
