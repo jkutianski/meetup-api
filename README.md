@@ -54,7 +54,7 @@ You can access more detailed documentation about the API at [Meetup API Docs sit
 [javascrip-wikipedia]: http://en.wikipedia.org/wiki/JavaScript
 [nodejs-url]: http://nodejs.org/
 [nodechakra-url]: https://github.com/nodejs/node-chakracore
-[apps-usingthis]: https://github.com/jkutianski/meetup-api/wiki/Applications-using-this-library
+[apps-usingthis]: https://github.com/jkutianski/meetup-api/network/dependents
 [runkit-url]: https://npm.runkit.com/meetup-api
 [runkit-image]: https://badge.runkitcdn.com/meetup-api.svg
 [snyk-url]: https://snyk.io/test/github/jkutianski/meetup-api
