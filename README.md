@@ -1,4 +1,4 @@
-Meetup API library for Node.js
+Meetup API library for Node.js (DEPRECATED)
 ==============================
 
 For Node.js < v4.0.0, please use [this branch][v0.1.x]
